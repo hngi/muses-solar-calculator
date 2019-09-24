@@ -1,0 +1,109 @@
+<script>
+// <![CDATA[
+// Solar Calculator Script
+function calculator_ongrid(form)
+{
+//Variable definitions 
+  var Energy = parseFloat(form.kWh.value);
+  var Percentage = parseFloat(form.PercentageSolar.value);
+  var SunHours = parseFloat(form.AverageSunHours.value);
+  var SystemRaw=0;
+  var System = 0;
+  var WattHoursDay=0;
+  var Recommended=0;
+  var RecommendedSystem=0;
+
+//PV System Calculations
+  WattHoursDay=((Energy*1e3)*(Percentage/100))/30; 
+  SystemRaw = (WattHoursDay/SunHours);
+  System=parseInt(SystemRaw);
+  Recommended = SystemRaw+(SystemRaw*0.15);
+  Recommended = Math.round(Recommended / 10)*10; 
+  RecommendedSystem = parseInt(Recommended);
+  
+//Ouput Results 
+  form.SystemSize.value = System;
+  form.SystemRecSize.value = RecommendedSystem;
+ 
+}
+// ]]></script>
+<p>Size a solar panel array for your home with our easy solar system calculator. Just fill out the form and click "Size My Solar System"!</p>
+<form>
+<table id="comparetable" class="blueshine">
+<tbody>
+<tr>
+<td width="75%" style="padding-bottom: 0px!important;">1. How many KiloWatt-Hours (kWh) do you use per month?<br> (Look at your electric bill or call your utility)</td>
+<td style="padding-bottom: 0px!important;">
+<input maxlength="10" size="5" name="kWh" type="text" class="inp-text" value="300"> kWh</td>
+</tr>
+<tr>
+<td style="padding-bottom: 0px!important;">2. What percentage of this power do you want to offset with solar? <span class="boxText" style="font-size: 10pt;"></span>
+</td>
+<td style="padding-bottom: 0px!important;">
+<input size="2" maxlength="3" name="PercentageSolar" type="text" value="100" class="inp-text"> %  </td>
+</tr>
+<tr>
+<td style="padding-bottom: 0px!important;">3. Which state do you live in? (Determines hours of daily sun you receive)</td>
+<td style="padding-bottom: 0px!important;">
+<select name="AverageSunHours" style="margin-bottom: 8px; border: 1px solid #909090; padding: 7px; border-radius: 4px;">
+<option value="5">Abia</option>
+<option value="9">Adamawa</option>
+<option value="5">Akwa Ibom</option>
+<option value="5.5">Anambra</option>
+<option value="8.5">Bauchi</option>
+<option value="5.5">Bayelsa</option>
+<option value="7.5">Benue</option>
+<option value="10">Borno</option>
+<option value="5">Cross River</option>
+<option value="4.5">Delta</option>
+<option value="5.5">Ebonyi</option>
+<option value="5">Enugu</option>
+<option value="6">Edo</option>
+<option value="5.5">Ekiti</option>
+<option value="9.5">Gombe</option>
+<option value="6">Imo</option>
+<option value="9.5">Jigawa</option>
+<option value="10.5">Kaduna</option>
+<option value="10.5">Kano</option>
+<option value="11">Katsina</option>
+<option value="11">Kebbi</option>
+<option value="7.5">Kogi</option>
+<option value="6.5">Kwara</option>
+<option selected value="6">Lagos</option>
+<option value="8.5">Nasarawa</option>
+<option value="9">Niger</option>
+<option value="5.5">Ogun</option>
+<option value="5">Ondo</option>
+<option value="5">Osun</option>
+<option value="5.5">Oyo</option>
+<option value="9">Plateau</option>
+<option value="6">Rivers</option>
+<option value="10.5">Sokoto</option>
+<option value="10">Taraba</option>
+<option value="9.5">Yobe</option>
+<option value="10.5">Zamfara</option>
+<option value="8">Federal Capital Territory (FCT) - Abuja</option>
+</select>
+</td>
+</tr>
+<tr>
+<td colspan="2" style="text-align:right;"><input name="calc" value="Size My Solar System »" type="Button" class="button orange" onclick="calculator_ongrid(this.form)"></td>
+</tr>
+<tr>
+<td style="padding-bottom: 0px!important;">
+<div style="text-align:right;"><span style="font-weight: bold;">Minimum <a href="https://www.gogreensolar.com/collections/solar-panel-kits" title="PV Solar System">PV System</a> Size</span></div>
+</td>
+<td>
+<input readonly maxlength="8" size="8" name="SystemSize" type="text" class="inp-text"> Watts</td>
+</tr>
+<tr>
+<td style="padding-bottom: 0px!important;">
+<div style="text-align:right;"><span style="font-weight: bold;">Recommended <a href="https://www.gogreensolar.com/collections/solar-panel-kits" title="PV Solar System">PV System</a> Size</span></div>
+</td>
+<td style="padding-bottom: 0px!important;">
+<input readonly maxlength="8" size="8" name="SystemRecSize" type="text" class="inp-text"> Watts</td>
+</tr>
+</tbody>
+</table>
+</form>
+<br><br>
