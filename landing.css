@@ -1,8 +1,9 @@
 body{
-    background-image: url('Landing\ page\ \(5\).png');
+    background-image: url('./images/Landing\ page\ \(5\).png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+   
 }
 a{
     color: black !important;
@@ -13,14 +14,21 @@ a{
     line-height: 15px;
     font-family: 'raleway', sans-serif;
 }
+a:hover{
+    color:darkgray !important;
+}
 #button{
     border: 1px solid #F81717;
     background: #F81717;
     border-radius: 25px;
     color: white !important;
     width: 100px;
-    height: 24px;
+    height: 27px;
     
+}
+#button :hover{
+    color: darkred;
+    outline: none;
 }
 
 #row {
@@ -34,7 +42,6 @@ font-size: 34px;
 line-height: 40px;
 }
 p{
-    
 font-family: 'Raleway' sans-serif;
 font-style: normal;
 font-weight: normal;
@@ -78,10 +85,52 @@ line-height: 24px;
   }
  
   
-  
-  
   input:focus {
     outline: none;
   }
-  
+
+ 
+@media (max-width: 576px) { 
+    body{
+        background-image: url('./images/log.png');
+        background-repeat: no-repeat;
+        background-size: cover;  
+        background-attachment: fixed;
+        width: 90%;
+    }
+    #row {
+        margin-top: 60% !important;
+     }
+     #button{
+         display: none;
+     }
+  }
+
+@media (max-width: 769px ){
+    body{
+        background-image: url('./images/Landing\ page\ \(10\).png');
+        background-repeat: no-repeat;
+        background-size: cover;  
+        background-attachment: fixed;
+    }
+    #row {
+        margin-top: 30% !important;
+     }
+}
+
+
+@media (max-width: 900px ) { 
+    body{
+        background-image: url('./images/Landing\ page\ \(11\).png');
+        background-repeat: no-repeat;
+        background-size: cover;  
+        background-attachment: fixed;
+    }
+    #row {
+        margin-top: 20% !important;
+     }
+ }
+
+
+
  
