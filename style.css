@@ -1,0 +1,333 @@
+ *{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Raleway';
+    overflow: hidden;
+    /* text-align: center; */
+}
+
+
+#wrapper{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+    user-select: none;
+    opacity: 0.8;
+}
+#background{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: url(assets/Rectangle2.png) no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
+#box{
+    padding-left: 8%;
+}
+
+.page-two{
+    opacity: 0.2;
+}
+
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    font-size: 1.2rem;
+}
+
+li{
+    list-style: none;
+}
+
+img{
+    height:100%;
+}
+
+button{
+    cursor: pointer;
+}
+button:hover{
+    font-weight: bold;
+}
+#header{ 
+    width: 100%;
+}
+#nav{
+    display: flex;
+    height: 10vh;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 1em;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links{
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn{
+    display: inline-block;
+    padding: 0.6em;
+    border-radius: 1em;
+    background: orange;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.btn:hover{
+    font-weight: 900;
+}
+.nav-links li, #logo{
+        animation: slideIn 0.5s ease-in forwards;
+        transform: translateX(800px);
+}
+
+#logo{
+    transform: translateX(-200px);
+    width: 60px;
+}
+
+.nav-links li:nth-child(2){
+    animation-delay: 0.5s;    
+}
+
+.nav-links li:nth-child(3){
+    animation-delay: 1s;
+}
+
+.nav-links a{
+    position: relative;
+    
+}
+.nav-links a:hover{
+    font-weight: 900;
+}
+
+.nav-links a:not(.btn)::after,
+.nav-links a:not(.btn)::before{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: orange;;
+    transform: scaleX(0);
+    transition: all 0.4s ease-in;
+}
+
+.nav-links a::after{
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+}
+
+.nav-links a::before{
+    top: 0;
+    transform-origin: left;
+}
+
+.nav-links a:hover::before,
+.nav-links a:hover::after{
+    transform: scaleX(1)
+}
+
+@keyframes slideIn{
+    from{
+
+    }
+    to{
+        transform: translateX(0)
+    }
+}
+
+
+
+
+#info{
+    position: absolute;
+    top: 37%;
+    left: 5%;
+    width: 30%;
+    
+}
+#info > *{
+    margin-bottom: 1.5rem;
+}
+
+#email{
+    padding: 0.6em 1em;
+    border: #777 1px solid; 
+    border-radius: 2em;
+    height: 50px;
+    width: 270px;
+    outline: none;
+}
+#email.error{
+    border: 2px solid red;
+}
+
+#errorMessage{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+#userinfo{
+    position: relative;
+}
+
+#calc{
+    position: absolute;
+    padding: 0.4em;
+    top: 9px;
+    left: 155px;
+} 
+
+.location, .add-reset{
+    display: flex;
+    width: 25%;
+    margin-top: 1em;
+    margin-left: 5%;
+    justify-content: space-between;
+    align-items: center;
+}
+.location p{
+    font-weight: bold;
+}
+.add-reset{
+    width: 90%;
+}
+#add-Row{
+    width: 160px;
+}
+#sunhours{
+    position: relative;
+    
+}
+
+#guide{
+    position: absolute;
+    left: 26%;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+#entries{
+    margin: 0 auto;
+    width: 90%;
+    margin-top: 2em;
+}
+
+.entry{
+    display: grid;
+    grid-gap: 4em;
+    margin-bottom: 2em;
+    grid-template-columns: 4fr 2fr 3fr 2fr 1fr 1fr; 
+}
+
+.headings{
+    display: flex;
+    margin-left: 0;
+    width: 100%;
+    margin: 5% auto 2%;
+    justify-content: space-between;
+}
+.headings p{
+    display: inline;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.headings p:nth-child(1){
+    margin-left: 4%;
+}
+
+.headings p:nth-child(2){
+    margin-left: 0.5%;
+}
+.headings p:nth-child(3){
+    margin-left: -2%;
+}
+
+
+input{
+    display: inline-block;
+    padding: 0.5em;
+    border: 1px solid #333;
+    background: #eee;
+    border-radius: 5px;
+}
+.muse h1{
+    margin: 3% auto;
+    width: 50%;
+    border: 1px solid #777;
+    border-radius: 6px;
+}
+
+ select{
+    padding: 2em;
+} 
+
+.button{
+    padding: 0.8em 2em;
+    width: 7%;
+    border-radius: 1.5em;
+    background:skyblue;
+    color: white;
+    outline: none;
+}
+
+#reset{
+    background: red;
+    padding: 0.6em;
+    margin-right: 10%;
+    width: 100px;
+}
+
+.remove-row{
+    display: inline-block;
+    border-radius: 20%;
+    border: 1px solid #333;
+    background: red;
+    color: white;
+    padding-top: 0.3em;
+}
+
+
+#sunhoursByState, #breakdown{
+    width: 500px;
+    height: 400px;
+} 
+
+
+
+#power-needed{
+    margin-top: 1%;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+#analysis{
+    width: 480px;
+    min-height: 100px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 1% auto;
+    line-height: 1.8em;
+}
+
