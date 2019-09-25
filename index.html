@@ -4,19 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link href="style.css" rel="stylesheet"> -->
+    <link href="style.css" rel="stylesheet">
     <link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" />
-    <link href="jquery-ui-1.12.1/chosen_v1.8.7/chosen.min.css" rel="stylesheet" />
     <link href="jquery-ui-1.12.1/dist/css/select2.min.css" rel="stylesheet" />
     <script src="jquery-3.4.1.js"></script>
     <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
-    <script src="jquery-ui-1.12.1/chosen_v1.8.7/chosen.jquery.min.js"></script>
     <script src="jquery-ui-1.12.1/dist/js/select2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
    
     
     <title>Document</title>
-    <style>
+    <!-- <style>
     *, body{
         margin: 0;
         border: 0;
@@ -28,7 +26,7 @@
 
     #wrapper{
         
-        background: url(assets/Rectangle.png) no-repeat;
+        background: url(assets/Rectangle2.png) no-repeat;
         background-position: top;
         background-size: cover;
         width: 100%;
@@ -179,17 +177,18 @@
         left: 155px;
         
     }
-    </style>
+    </style> -->
 </head>
 <body>
-        <div id="wrapper">
+        <div class="wrapper">
+        <div id="background"></div>
         <header class="main-header">
                 <nav id="nav">
-                    <img id="logo" src="assets/muses.png">
+                    <img style="visibility: hidden;"id="logo" src="assets/muses.png">
                     <ul class="nav-links"> 
                         <li><a href="">HOME</a></li>
                         <li><a href="">ABOUT</a></li>
-                        <li><a class="btn" href="">CALCULATE</a></li>
+                        <li><a class="btn loading">CALCULATE</a></li>
                     </ul>
                 </nav>
         </header>
@@ -197,7 +196,7 @@
             <h1>Muse Solar Calculator</h1>
             <p>The Muse solar calculator enables you calculate the exact amount of solar panels you would need for your home</p>
             <div id="userinfo">
-                <input id="email" placeholder="Your email" type=email/><span class="btn" id="calc">CALCULATE</span>
+                <input id="email" placeholder="Your email" type=email required/><label id="errorMessage"></label><span class="btn loading" id="calc">CALCULATE</span>
             </div>
             
 
@@ -208,30 +207,9 @@
 
 
         
-        <!-- <script src="main.js"></script> -->
+        <script src="main.js"></script>
     <script>
-    $(document).ready(function(){
-            $('#email').on('focus',function(){
-                   
-                    $(this).animate({
-                        "width" : "320px"
-                    }, 500)
-                    $('#calc').animate({
-                        "left": "+=50"
-                    }, 500)
-            })
-            $('#email').on('blur',function(){
-                    console.log($(this))
-                    $(this).animate({
-                        "width" : "270px"
-                    }, 500)
-                    $('#calc').animate({
-                        "left": "-=50"
-                    }, 500)
-            })
-
-
-    })
+    
     </script>
 </body>
 </html>

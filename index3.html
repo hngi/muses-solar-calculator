@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" rel="stylesheet">
+    <link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" />
+    <link href="jquery-ui-1.12.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="jquery-3.4.1.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="jquery-ui-1.12.1/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+   
+    
+    <title>Document</title>
+    
+    
+</head>
+<body>
+        <div class="wrapper">
+                <div id="background" class="page-two"></div>
+                <header class="main-header">
+                        <nav id="nav">
+                            <img id="logo" src="assets/muses.png">
+                            <ul class="nav-links"> 
+                                <li><a href="">HOME</a></li>
+                                <li><a href="">ABOUT</a></li>
+                                <li><a id="calc-02"class="btn">CALCULATE</a></li>
+                            </ul>
+                        </nav>
+                </header>
+        <div>
+        <div id="reportCard">
+
+
+        </div>
+        <div id="breakdown">
+                <canvas id="myChart_P"></canvas>
+     
+        </div>
+        <div id="sunhoursByState">
+           <canvas id="myChart_S"></canvas>
+
+         </div>
+
+         
+            
+
+        </div>
+
+        
+    
+    
+
+
+        
+        <script src="main.js"></script>
+    <script>
+//     $(document).ready(function(){
+
+
+// let dataEntry = [{appliances: "Space Heater", quantity: "5", rating: "1500", hours: "1", consumptionPerDevice: "7500"}, {appliances: "CFL Light Bulb", quantity: "5", rating: "14", hours: "1", consumptionPerDevice: "70"},{appliances: "Iron", quantity: "4", rating: "1100", hours: "1.5", consumptionPerDevice: "6600"}]
+
+// let states = {
+//                         Abia :5,"Adamawa": 9,"Akwa Ibom": 5,"Anambra": 5.5,"Bauchi": 8.5,"Bayelsa": 5.5,"Benue": 7.5,"Borno": 11,"Cross River": 5,"Delta": 4.5,
+//                         "Ebonyi": 5.5, "Enugu": 5, "Edo": 6, "Ekiti": 5.5, "Gombe": 9.5, "Imo": 6, "Jigawa": 9.5, "Kaduna": 10.5, "Kano": 10.5, "Katsina": 11,
+//                         "Kebbi": 11,"Kogi": 7.5, "Kwara": 6.5, "Lagos": 6, "Nasarawa": 8.5, "Niger": 9, "Ogun": 5.5, "Ondo": 5, "Osun": 5, "Oyo": 5.5, "Plateau": 9,
+//                         "Rivers": 6, "Sokoto": 10.5, "Taraba": 10, "Yobe": 9.5, Zamfara: 10.5, "Abuja": 8 }
+
+// let dataEntry_appliances = [];
+// let dataEntry_powerConsumption = [];
+// let  dataEntry_states = []
+// let dataEntry_sunhours = []
+// for (let i=0; i<dataEntry.length; i++){
+//     // console.log(dataEntry[i].appliances, dataEntry[i].consumptionPerDevice)
+//     dataEntry_appliances.push(dataEntry[i].appliances)
+//     dataEntry_powerConsumption.push(dataEntry[i].consumptionPerDevice)
+// }
+
+// for(key in states){
+//     dataEntry_states.push(key)
+//     dataEntry_sunhours.push(states[key])
+// }
+
+// // var choice = 'line';
+// // var xArray = dataEntry_states;
+// // var yArray = dataEntry_sunhours;
+// // console.log(choice, xArray, yArray)
+//  createCharts('myChart_P','bar',dataEntry_appliances,dataEntry_powerConsumption, 'Your Power Consumption by Appliance' )
+//  createCharts('myChart_S','line',dataEntry_states,dataEntry_sunhours, 'Sun Hours by State' )
+ 
+
+
+// function createCharts(element, choice, xArray, yArray, title){
+//     var ctx = document.getElementById(element).getContext('2d');
+//     console.log(choice, xArray, yArray)
+//         var myChart = new Chart(ctx, {
+//         type: choice, //horizontalBar, pie, line, doughnut, radar, polarArea
+//         data: {
+//             labels: xArray, //['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+//             datasets: [{
+//                 label: title,
+//                 data: yArray, //[12, 19, 3, 5, 2, 3],
+//                 backgroundColor: [
+//                     'rgba(255, 99, 132, 0.4)',
+//                     'rgba(54, 162, 235, 0.4)',
+//                     'rgba(255, 206, 86, 0.4)',
+//                     'rgba(75, 192, 192, 0.4)',
+//                     'rgba(153, 102, 255, 0.4)',
+//                     'rgba(255, 159, 64, 0.4)'
+//                 ],
+//                 borderColor: [
+//                     'rgba(255, 99, 132, 1)',
+//                     'rgba(54, 162, 235, 1)',
+//                     'rgba(255, 206, 86, 1)',
+//                     'rgba(75, 192, 192, 1)',
+//                     'rgba(153, 102, 255, 1)',
+//                     'rgba(255, 159, 64, 1)'
+//                 ],
+//                 borderWidth: 1
+//             }]
+//         },
+//         options: {
+//             scales: {
+//                 yAxes: [{
+//                     ticks: {
+//                         beginAtZero: true
+//                     }
+//                 }]
+//             }
+//         }
+//     });
+// }
+ 
+
+
+
+
+// // var myChart = new Chart(ctx, {
+// //         type: 'doughnut', //horizontalBar, pie, line, doughnut, radar, polarArea
+// //         data: {
+// //             labels: dataEntry_appliances, //['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+// //             datasets: [{
+// //                 label: 'Power Consumption per Device',
+// //                 data: dataEntry_powerConsumption, //[12, 19, 3, 5, 2, 3],
+// //                 backgroundColor: [
+// //                     'rgba(255, 99, 132, 0.4)',
+// //                     'rgba(54, 162, 235, 0.4)',
+// //                     'rgba(255, 206, 86, 0.4)',
+// //                     'rgba(75, 192, 192, 0.4)',
+// //                     'rgba(153, 102, 255, 0.4)',
+// //                     'rgba(255, 159, 64, 0.4)'
+// //                 ],
+// //                 borderColor: [
+// //                     'rgba(255, 99, 132, 1)',
+// //                     'rgba(54, 162, 235, 1)',
+// //                     'rgba(255, 206, 86, 1)',
+// //                     'rgba(75, 192, 192, 1)',
+// //                     'rgba(153, 102, 255, 1)',
+// //                     'rgba(255, 159, 64, 1)'
+// //                 ],
+// //                 borderWidth: 1
+// //             }]
+// //         },
+// //         options: {
+// //             scales: {
+// //                 yAxes: [{
+// //                     ticks: {
+// //                         beginAtZero: true
+// //                     }
+// //                 }]
+// //             }
+// //         }
+// //     });
+
+// // console.log(myChart.config.type)
+
+
+        
+// })
+// </script>
+    
+   
+    
+</body>
+</html>
+
+
