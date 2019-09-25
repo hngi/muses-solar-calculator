@@ -251,6 +251,12 @@ ul {
 }
 
 @media only screen and (max-width: 768px) {
+  .calculate .appliances {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 5%;
+    justify-content: center;
+  }
   .navbar {
     max-height: 0;
     overflow: hidden;
@@ -331,11 +337,4 @@ ul {
       }
     }
   }
-  .appliances {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin-bottom: 5%;
-    justify-content: center;
-  }
 }
-                                                                                                                                                                                                                                                                                                                         
