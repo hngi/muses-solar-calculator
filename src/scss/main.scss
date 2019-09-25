@@ -36,13 +36,14 @@ ul {
 
 // Home
 .home {
+  padding: 2em;
   height: 100vh;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   // background-attachment: fixed;
   background-image: url("../homeBack.jpg");
-  overflow: hidden;
+  overflow-x: hidden;
 
   &-main {
     display: flex;
@@ -86,9 +87,13 @@ ul {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  user-select: none;
 
   .logo {
     margin-top: -0.8rem;
+  }
+  .clear-fix {
+    clear: both;
   }
 
   .nav-links {
@@ -120,26 +125,216 @@ ul {
     }
   }
 }
+.navbar .navbar-icon {
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none;
+}
 
-.calculate {
-  // height: 100%;
-  // overflow: hidden;
-
-  .nav-back {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    // background-attachment: fixed;
-    background-image: linear-gradient(
+.cover {
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  bottom: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  text-align: center;
+  background-image: linear-gradient(
       to right bottom,
       rgba(#fff, 0.8),
       rgba(#fff, 0.8)
-    ), url("../homeBack.jpg");
-    height: 30vh;
+    ),
+    url("../homeBack.jpg");
+}
+
+.calculate {
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  width: 90%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  margin: auto;
+  margin-top: 0;
+
+  .appliances {
+    display: grid;
+    grid-template-columns: repeat(2, 350px);
+    column-gap: 100px;
+    margin-bottom: 5%;
+  }
+
+  input::placeholder {
+    text-align: center !important;
+    color: black !important;
+  }
+
+  input,
+  select {
+    width: 100%;
+    height: 2rem;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid;
+    color: palevioletred;
+    margin: 0.8rem 0;
+  }
+  .nav-back {
+    // background-size: 100vw 100vh;
+    // background-position: center center;
+    // background-repeat: no-repeat;
+    // // background-attachment: fixed;
+    // background-image: linear-gradient(
+    //     to right bottom,
+    //     rgba(#fff, 0.8),
+    //     rgba(#fff, 0.8)
+    //   ),
+    //   url("../homeBack.jpg");
 
     h1 {
       @include second-header;
       @include text-center;
+    }
+  }
+}
+
+.buttons > button:nth-child(1) {
+  background: $blue;
+  color: #fff;
+  height: 3em;
+  border: none;
+  border-radius: 3em;
+  padding: 0 1em;
+  margin-right: 2em;
+  outline: none;
+  &:hover {
+    background: #02304b;
+  }
+}
+
+.buttons {
+  margin: inherit;
+  text-align: inherit;
+  padding: 0;
+}
+.buttons > button:nth-child(2) {
+  background: $red;
+  color: #fff;
+  height: 3em;
+  border: none;
+  border-radius: 3em;
+  padding: 0 1em;
+  margin-right: 2em;
+  outline: none;
+  &:hover {
+    background: #aa5757;
+  }
+}
+
+.buttons > button:nth-child(3) {
+  background: $green-dark;
+  color: #fff;
+  height: 3em;
+  border: none;
+  border-radius: 3em;
+  padding: 0 1em;
+  margin-right: 2em;
+  outline: none;
+  &:hover {
+    background: $green-light;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .calculate .appliances {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-bottom: 5%;
+    justify-content: center;
+  }
+  .navbar {
+    max-height: 0;
+    overflow: hidden;
+  }
+  .nav-links {
+    display: none;
+  }
+
+  .navbar-icon {
+    display: block !important;
+    font-size: 2rem;
+    right: 6rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar.toggled {
+    padding: 0;
+    max-height: 40vw;
+    transition: max-height 1s;
+    position: fixed;
+    display: block;
+  }
+
+  .navbar-icon {
+    position: fixed !important;
+  }
+
+  .navbar.toggled .nav-links {
+    background: $green-dark;
+    background-position: cover;
+    width: 80vw;
+    display: block;
+    margin-right: 0.5em;
+    padding: 0;
+
+    & li {
+      border-bottom: 1px solid #fff;
+      & a {
+        color: #fff !important;
+      }
+    }
+  }
+
+  .navbar.toggled > .logo {
+    top: 0;
+    left: 0;
+    display: none;
+    // margin: 15px 0 0 0;
+  }
+
+  .navbar.toggled *:not(.logo):not(.navbar-icon) {
+    float: none;
+    display: block !important;
+    text-align: left;
+    margin: 0;
+  }
+
+  .home {
+    text-align: center;
+
+    .home-main {
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .home-body {
+      text-align: center;
+      padding: auto;
+      & h1 {
+        margin: 0 auto;
+        margin-bottom: 1em;
+      }
+      & p {
+        margin-bottom: 3em;
+        font-weight: bold;
+        background: rgba(#fff, 0.8);
+      }
     }
   }
 }
