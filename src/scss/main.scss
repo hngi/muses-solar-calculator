@@ -1,0 +1,145 @@
+@charset "utf-8";
+
+$red: #f81717;
+$blue: #2eb1ff;
+$green-light: #73af4d;
+$green-dark: #3b722f;
+$yellow: #ffd636;
+$black: #333;
+
+@mixin transition {
+  transition: all 0.4s;
+}
+
+@mixin lead-header {
+  font-size: 3rem;
+  margin-bottom: 1.4rem;
+}
+
+@mixin second-header {
+  font-size: 2.4rem;
+  margin-bottom: 1.4rem;
+}
+
+@mixin text-center {
+  text-align: center;
+}
+
+// General
+.app {
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+// Home
+.home {
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  // background-attachment: fixed;
+  background-image: url("../homeBack.jpg");
+  overflow: hidden;
+
+  &-main {
+    display: flex;
+    align-items: center;
+  }
+
+  &-body {
+    padding-left: 3rem;
+    // transform: translateY(50%);
+    margin-top: 5rem;
+    // margin-top: -4rem;
+
+    h1 {
+      @include lead-header;
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 2rem;
+    }
+
+    .home-get-started {
+      text-transform: capitalize;
+      text-decoration: none;
+      color: white;
+      background: $green-dark;
+      padding: 0.8rem 2.5rem;
+      border-radius: 20px;
+      font-size: 17px;
+      @include transition;
+
+      &:hover {
+        background: $green-light;
+      }
+    }
+  }
+}
+
+// Navbar
+.navbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  .logo {
+    margin-top: -0.8rem;
+  }
+
+  .nav-links {
+    padding: 1.2rem 3rem;
+
+    .nav-items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & li {
+        display: inline-block;
+        margin-right: 1.5rem;
+
+        .nav-link {
+          padding: 0.4rem 0.5rem;
+          text-decoration: none;
+          text-transform: capitalize;
+          color: #000;
+          font-weight: bold;
+          font-size: 20px;
+          @include transition;
+
+          &:hover {
+            border-bottom: 2px solid #000;
+          }
+        }
+      }
+    }
+  }
+}
+
+.calculate {
+  // height: 100%;
+  // overflow: hidden;
+
+  .nav-back {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+    background-image: linear-gradient(
+      to right bottom,
+      rgba(#fff, 0.8),
+      rgba(#fff, 0.8)
+    ), url("../homeBack.jpg");
+    height: 30vh;
+
+    h1 {
+      @include second-header;
+      @include text-center;
+    }
+  }
+}
