@@ -22,7 +22,7 @@ $(document).ready(function(){
     let count = 2; 
     let total = 0;
     let report, details, residence, sunHours, panels, hourlyEnergyRequired, product;
-    // parseFloat($(this).val()).toFixed(2)
+    
     
     let obj = []
 
@@ -50,7 +50,7 @@ $(document).ready(function(){
                 <input id="qty-${count}" class="qty" value="1" min="0" max="999" type="number">
                 <input id="rating-${count}" value=0 class="watts" type=text disabled/>
                 <input id="hours-${count}" class="hours" min="0" max="24" step="1" value="0" type="number">
-                <input id="daily-${count}" class="daily" value="0">
+                <input id="daily-${count}" class="daily" value="0" type=text>
                 <button class="remove-row">Remove</button></div>`
        
                 $('#entries').append(newRow)
@@ -59,7 +59,7 @@ $(document).ready(function(){
             }
 
     const populateList =(array, element) =>{
-        // let select = element || $('.appliances')
+        
         element.select2({
         data: Object.keys(array)
      })
@@ -91,13 +91,11 @@ $(document).ready(function(){
     }
     
     $('#worksheet').on('change', '.appliances', function(){
-        //  console.log($(this).val())
-        //  console.log(this.id)
-         let sequence = this.id.split('-')[1]
-       
+    
+       let sequence = this.id.split('-')[1]   
        let index = Object.keys(ratings).indexOf($(this).val());
        if(index >= 0){console.log(Object.values(ratings)[index])
-        console.log(`#rating-${sequence}`)
+        
             $(`#rating-${sequence}`).val(Object.values(ratings)[index])
         }else{
             $(`#rating-${sequence}`).val(0)
@@ -108,15 +106,13 @@ $(document).ready(function(){
      $('#worksheet').on('change', 'input, select', function(){
         
          let sequence = this.id.split('-')[1]
-        // console.log(parseFloat($(`#qty-${sequence}`).val()), parseFloat($(`#rating-${sequence}`).val()),  $(`#hours-${sequence}`).val() )
-    
            let perdevice= $(`#qty-${sequence}`).val() * $(`#rating-${sequence}`).val() * $(`#hours-${sequence}`).val() 
            parseFloat($(`#daily-${sequence}`).val(perdevice)).toFixed(2)
-        // parseFloat($('.hours').val()).toFixed(2)
+        
      })
 
      $('#sunhours').on('change', function(){
-        // console.log(sunhours.value)
+        
        residence = sunhours.value
        let index = Object.keys(states).indexOf(residence);
        if(index >= 0){console.log(Object.values(states)[index])
@@ -126,7 +122,7 @@ $(document).ready(function(){
      })
 
      $('#add-Row').on('click', function(){
-        console.log('here')
+        
          createRow(ratings)
      })
 
@@ -158,16 +154,14 @@ $(document).ready(function(){
 
         $('.daily').each(function(index, value){
             obj[index].consumptionPerDevice = ($(this).val())
-            console.log(obj)
-             console.log($(this))
             total += +($(this).val())
             hourlyEnergyRequired = (total / sunHours).toFixed(2)
             panels = Math.ceil(hourlyEnergyRequired / 320)
-            console.log(total)
+            
         })
         product = recommendProduct(hourlyEnergyRequired)
         details = `Dear <b>${email}</b>,
-              Your daily energy need is <strong>${total}</strong> wattshr. The average sun-hours in <b>${residence}</b> is <b>${sunHours}</b>hours. Hence, you will need <b>${panels}</b> solar panel(s) to provide an average of <b>${hourlyEnergyRequired}</b> watts/hr each sun-hour. Armed with this information, we would like to recommend our <b>${product}</b>.`
+              Your daily energy need is <strong>${total}</strong> wattshr. The average sun-hours in <b>${residence}</b> is <b>${sunHours}</b>hours. Hence, you will need <b>${panels}</b> solar panel(s) to provide an average of <b>${hourlyEnergyRequired}</b> watts per sun-hour. Armed with this information, we would like to recommend our <b>${product}</b>.`
     
               $('#analysis').html(details)
        }else{
@@ -177,9 +171,6 @@ $(document).ready(function(){
      })
 
      
-
-     
-
 
      let obj1 = [{appliances: "Space Heater", quantity: "5", rating: "1500", hours: "1", consumptionPerDevice: "7500"}, {appliances: "CFL Light Bulb", quantity: "5", rating: "14", hours: "1", consumptionPerDevice: "70"},{appliances: "Iron", quantity: "4", rating: "1100", hours: "1.5", consumptionPerDevice: "6600"}]
         let dataEntry_appliances = [];
@@ -216,18 +207,11 @@ $(document).ready(function(){
     })
 
     $('#reset').on('click', function(){
-
-        // $('#power-audit').trigger('reset');
-        // $('#power-audit')[0].reset();
-        console.log($('#analysis'))
+        
         $("input[type=text], input[type=number]").val("0");
-        // details = "";
-        // console.log($('#analysis'))
         $('#analysis').html('');
-        // // document.querySelector('#analysis').innerHTML = '';
-        // console.log($("#appliance-0 option[selected]").val())
-        $('#appliance-0').val($('#appliance-0').prop('selected'));
-        $('select').val('');
+        // $('#appliance-0').val($('#appliance-0').prop('selected'));
+        // $('select').val('');
     
     })
 

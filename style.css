@@ -8,7 +8,6 @@
 body{
     font-family: 'Raleway';
     overflow: hidden;
-    /* text-align: center; */
 }
 
 
@@ -259,10 +258,13 @@ button:hover{
 }
 
 .headings p:nth-child(2){
-    margin-left: 0.5%;
+    margin-left: 2%;
 }
 .headings p:nth-child(3){
-    margin-left: -2%;
+    margin-left: 0
+}
+.headings p:nth-child(4){
+    margin-left: 4%;
 }
 
 
@@ -309,13 +311,10 @@ input{
     padding-top: 0.3em;
 }
 
-
 #sunhoursByState, #breakdown{
     width: 500px;
     height: 400px;
 } 
-
-
 
 #power-needed{
     margin-top: 1%;
