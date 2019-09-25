@@ -9,7 +9,7 @@ export class Appliances extends Component {
   }
   render () {
     return (
-      <div>
+      <div className="appliances">
         {
           this.props.appliances.map( ( appliance ) => ( <Appliance quantity={appliance.quantity} watts={appliance.watts} hours={appliance.hours} key={appliance.id} name={appliance.name} id={appliance.id} changeDetails={this.props.changeDetails} select={this.props.select} /> ))
         }

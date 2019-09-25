@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import Navbar from "../layout/Navbar";
 import Appliances from '../appliances/Appliances';
 
-export class Calculate extends Component {
+class Calculate extends Component {
   render() {
     const {add, reset, showResult} = this.props
     return (
-      <div>
+      <div className="cover">
+      <Navbar />
         <div className="calculate">
           <div className="nav-back">
-            <Navbar />
             <h1>Muse Solar Calculator</h1>
           </div>
           <div className="calculate-main">
