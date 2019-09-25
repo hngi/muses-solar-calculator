@@ -15,6 +15,7 @@ export class App extends Component {
       { name: "", id: 2, quantity: 0, watts: 0, hours: 0 }
     ],
     showForm: false,
+    final: null
   };
 
   changeDetails = (id, name, value) => {
@@ -68,6 +69,7 @@ export class App extends Component {
     const sumArr = totalArr.reduce( ( a, b ) => a + b, 0 );
     const final = sumArr.toFixed(2)
     console.log( final );
+    this.setState({final})
   }
 
   render () {
@@ -88,6 +90,7 @@ export class App extends Component {
                   reset={this.reset}
                   showResult={this.showResult}
                   select={this.state.select}
+                  final={this.state.final}
                 />
               )}
             />

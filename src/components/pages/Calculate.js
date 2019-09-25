@@ -13,7 +13,7 @@ export class Calculate extends Component {
             <h1>Muse Solar Calculator</h1>
           </div>
           <div className="calculate-main">
-            
+
             <Appliances select={this.props.select} appliances={this.props.appliances} changeDetails={this.props.changeDetails} />
 
             <div className="buttons">
@@ -22,7 +22,7 @@ export class Calculate extends Component {
               <button onClick={showResult}>Give me my solar report</button>
             </div>
             <div className="result">
-
+              {this.props.final !== null && ( <p>You'll need {this.props.final}kwh of solar energy per daily to run your appliances</p>)}
             </div>
           </div>
         </div>

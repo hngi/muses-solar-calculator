@@ -9,22 +9,34 @@ export class Form extends Component {
     hours: 0
   };
 
-  onSubmit = (e) => {
+  onSubmit = e => {
     e.preventDefault();
     this.props.falseForm();
-    this.props.inject( this.state.name, this.state.id, this.state.quantity, this.state.watts, this.state.hours )
-    this.setState({name: "", id: this.state.id + 1, quantity: 0, watts: 0, hours: 0})
+    this.props.inject(
+      this.state.name,
+      this.state.id,
+      this.state.quantity,
+      this.state.watts,
+      this.state.hours
+    );
+    this.setState({
+      name: "",
+      id: this.state.id + 1,
+      quantity: 0,
+      watts: 0,
+      hours: 0
+    });
   };
 
   onChange = e => {
-    this.setState({[e.target.name]: e.target.value})
-  }
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
   render() {
     const { name, quantity, watts, hours } = this.state;
     return (
       this.props.showForm && (
-        <div>
+        <div style={{ marginBottom: "3rem" }}>
           <form onSubmit={this.onSubmit}>
             <div>
               <label htmlFor="name">Name of device: </label>
