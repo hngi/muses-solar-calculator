@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#email').on('focus',function(){
+    $('#name').on('focus',function(){
            
             $(this).animate({
                 "width" : "320px"
@@ -8,7 +8,7 @@ $(document).ready(function(){
                 "left": "+=50"
             }, 500)
     })
-    $('#email').on('blur',function(){
+    $('#name').on('blur',function(){
             console.log($(this))
             $(this).animate({
                 "width" : "270px"
@@ -50,8 +50,8 @@ $(document).ready(function(){
                 <input id="qty-${count}" class="qty" value="1" min="0" max="999" type="number">
                 <input id="rating-${count}" value=0 class="watts" type=text disabled/>
                 <input id="hours-${count}" class="hours" min="0" max="24" step="1" value="0" type="number">
-                <input id="daily-${count}" class="daily" value="0">
-                <button class="remove-row">Remove</button></div>`
+                <input  id="daily-${count}" class="daily" value="0">
+                <button class="remove-row">Remove</button></div>`;
        
                 $('#entries').append(newRow)
                 // let element =  $('.appliances')
@@ -166,8 +166,8 @@ $(document).ready(function(){
             console.log(total)
         })
         product = recommendProduct(hourlyEnergyRequired)
-        details = `Dear <b>${email}</b>,
-              Your daily energy need is <strong>${total}</strong> wattshr. The average sun-hours in <b>${residence}</b> is <b>${sunHours}</b>hours. Hence, you will need <b>${panels}</b> solar panel(s) to provide an average of <b>${hourlyEnergyRequired}</b> watts/hr each sun-hour. Armed with this information, we would like to recommend our <b>${product}</b>.`
+        details = `Dear <b>${name}</b>,
+              Your daily energy need is <strong>${total}</strong> wattshr. The average sun-hours in <b>${residence}</b> is <b>${sunHours}</b>hours. Hence, you will need <b>${panels}</b> solar panel(s) to provide an average of <b>${hourlyEnergyRequired}</b> watts per sun-hour. Armed with this information, we would like to recommend our <b>${product}</b>.`
     
               $('#analysis').html(details)
        }else{
@@ -200,17 +200,17 @@ $(document).ready(function(){
         // createCharts('myChart_P','bar',dataEntry_appliances,dataEntry_powerConsumption, 'Your Power Consumption by Appliance' )
         // createCharts('myChart_S','line',dataEntry_states,dataEntry_sunhours, 'Sun Hours by State' )
 
-        let email = JSON.parse(localStorage.getItem('userData'))|| '';
+        let name = JSON.parse(localStorage.getItem('userData'))|| '';
         $('.loading').on('click', function(){
             
-            email = $('#email').val()
-            if(email){
-                localStorage.setItem('userData', JSON.stringify(email))
-                console.log(email)
+            name = $('#name').val()
+            if(name){
+                localStorage.setItem('userData', JSON.stringify(name))
+                console.log(name)
                 window.location.href = "index2.html"
             }else{
-                $('#email').addClass('error')
-                $('#errorMessage').html("<span class='errMessage' style='color: red;'>Please Enter Your Email<span>")
+                $('#name').addClass('error')
+                $('#errorMessage').html("<span class='errMessage' style='color: red;'>Please Enter Your Name :)<span>")
                  
             }
     })
