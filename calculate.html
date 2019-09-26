@@ -8,6 +8,7 @@
     <link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" />
     <link href="jquery-ui-1.12.1/dist/css/select2.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+    
     <link rel="shortcut icon" href="./assets/muses.png" type="image/png">
     <script src="jquery-3.4.1.js"></script>
     <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
@@ -48,7 +49,7 @@
             
             <p style="font-weight: bold" id="guide"><span style="color:red; font-size:1.5em;">*</span>Select your state of residence</p>
         </div>
-        <div id="worksheet">
+       <!--- <div id="worksheet">
             <form id="power-audit">
             <div id='entries'>
                 <div class="headings">
@@ -87,19 +88,70 @@
                         <input id="daily-2" class="daily" value="0" type=text disabled/>
                     </div>
             </div>
-            <div class="add-reset">
-            <button type="button" class="button" id="add-Row">+Add Appliance</button>
-            <p class="showResult"
-                style="display: inline-block; cursor: pointer; padding: 0.5rem 1rem; background: orange; border-radius: 20px; outline: none;">
-                Show my results</p>
-            <button type="button" class="button" id="reset">Reset</button>
-
+        -->
+        <div id="worksheet">
+            <form id="power-audit">
+            <div id='entries'>
+        <table class="input-table" style="width:100%">
+            
+            <tr class="headings">
+              <th> <p> APPLIANCES</th>
+              <th> <p> QUANTITY</th>
+              <th> <p> WATTAGE</th>
+              <th> <p> HOURS</th>
+              <th> <p> SUB TOTAL</th>
+              <th><p style="visibility:hidden;">dummy</p></th>
+            </tr>
+            <div class="entry" id="entry-0">
+            <tr>
+              <td> <select required id="appliance-0" class="appliances">
+                <option value="" selected hidden>Select Appliance</option>
+            </select></td>
+              <td> <input id="qty-0" class="qty" min="0" max="999" value="0" type="number"></td>
+              <td> <input id="rating-0" value="0" class="watts" type=text disabled/></td>
+              <td><input id="hours-0" class="hours" min="0" max="24" step="1" value="0" type="number"></td>
+              <td> <input id="daily-0" class="daily" value="0" type=text disabled/></td>
+            </tr>
             </div>
+            <div class="entry" id="entry-1">
+            <tr>
+                <td><select required id="appliance-1" class="appliances">
+                    <option value="" selected hidden>Select Appliance</option>
+                </select></td>
+                <td><input id="qty-1" class="qty" min="0" max="999" value="0" type="number"></td>
+                <td><input id="rating-1" value="0" class="watts" type=text disabled/></td>
+                <td><input id="hours-1" class="hours" min="0" max="24" step="1" value="0" type="number"></td>
+                <td><input id="daily-1" class="daily" value="0" type=text disabled/></td>
+            </tr>
+            </div>
+            <div class="entry" id="entry-2">
+            <tr>
+                <td><select required id="appliance-2" class="appliances">
+                    <option value="" selected hidden>Select Appliance</option>
+                </select></td>
+                <td><input id="qty-2" class="qty" min="0" max="999" value="0" type="number"></td>
+                <td><input id="rating-2" value="0" class="watts" type=text disabled/></td>
+                <td><input id="hours-2" class="hours" min="0" max="24" step="1" value="0" type="number"></td>
+                <td><input id="daily-2" class="daily" value="0" type=text disabled/></td>
+            </tr>
+            </div>
+          </table>
+            </div>
+            <table class="buttontable" width="83%">
+                <div class="add-reset">
+           <tr>
+            <td><button type="button" class="button" id="add-Row">+Add Appliance</button></td>
+            <td> <p class="showResult"
+                style="display: inline-block; cursor: pointer; padding: 0.5rem 1rem; background: orange; border-radius: 20px; outline: none;">
+                Show my results</p></td>
+            <td><button type="button" class="button" id="reset">Reset</button></td>
+           </tr>
+           </div>
+             </table>
+            
             <div id="summary">
-                
                 <p id="power-needed">TOTAL POWER NEEDED</p>
                 <div id="charts" style="display: flex; justify-content: space-around; align-items: center; margin: 3rem auto"></div>
-                
                 <div id="analysis"></div>
             </div>
             </form>

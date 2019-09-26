@@ -43,7 +43,9 @@ body{
 .page-two{
     opacity: 0.4 !important;
 }
-
+tr{
+    margin-bottom: 3px;
+}
 
 a{
     text-decoration: none;
@@ -232,10 +234,11 @@ button:hover{
 
  .add-reset{
     display: flex;
-    width: 25%;
-    margin-top: 1em;
-    margin-left: 5%;
-    justify-content: space-between;
+   flex-flow: row wrap;
+   justify-content: space-around;
+    
+    margin: 1em 33% 0 5px;
+    
     align-items: center;
 }
 .location p{
@@ -279,13 +282,11 @@ button:hover{
 }
 
 .headings{
-    display: flex;
-    margin-left: 0;
-    width: 84%;
-    margin: 2rem auto;
-    justify-content: space-between;
     border-bottom: 2px solid red;
-    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+.input-table{
+    margin-top: -7rem;
 }
 .headings p{
     display: inline;
@@ -323,6 +324,17 @@ input{
  select{
     padding: 2em;
 } 
+th, td{
+    margin-bottom: 3rem;
+}
+
+.qty,
+.watts,
+.hours,
+.daily {
+    width: 80px;
+    margin: 15px;
+}
 
 .button{
     padding: 0.8em 2em;
@@ -401,8 +413,10 @@ input{
 
 .qty,
 .watts,
-.hours {
+.hours,
+.daily {
     width: 80px;
+    margin: 7px;
 }
 .appliances {
     width: 110px;
@@ -452,6 +466,7 @@ input{
     font-weight: bold;
 }
 
+
 #userinfo {
     margin-left: auto;
     margin-right: auto;
@@ -484,6 +499,22 @@ input{
         width: 100%;
         margin: 0 auto;
     }
+    
+    .qty,
+    .watts,
+    .hours {
+    width: 50px;
+    margin: 10px;
+    }
+.appliances {
+    width: 110px;
+
+}
+.buttontable{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 }
 @media screen and (max-width: 400px) {
     .nav-links{
@@ -495,4 +526,18 @@ input{
         padding-left: 1rem;
         padding-right: 1rem;
     }
+    .qty,
+    .watts,
+    .hours {
+    width: 50px;
+    margin: 7px;
+    }
+.appliances {
+    width: 60px;
+}
+.headings  {
+    width: 120%;
+    margin-left: 4rem;
+    
+}
 }
