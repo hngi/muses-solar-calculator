@@ -346,7 +346,7 @@ input{
     border: 1px solid #333;
     background: red;
     color: white;
-    padding-top: 0.3em;
+    padding: 0.4rem 0.6rem;
 }
 
 
@@ -465,6 +465,19 @@ input{
     margin-left: auto;
     margin-right: auto;
 }
+
+#summary{
+    position: relative;
+}
+#charts{
+    display: flex;
+    width: 100%;
+    /* margin-top: 5%; */
+    /* justify-content: space-evenly; */
+    justify-content: center;
+    align-items: center;
+}
+
 }
 @media screen and (max-width: 660px) {
     .nav-links{
