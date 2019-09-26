@@ -26,7 +26,6 @@ body{
     left: 0;
     bottom: 0;
     width: 100%;
-    border: 1px solid red;
     background: url(assets/Rectangle2.png) repeat;
     background-size: cover;
     background-attachment: scroll;
