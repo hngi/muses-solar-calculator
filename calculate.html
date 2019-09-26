@@ -25,9 +25,12 @@
         
 
 </head>
-<body style="overflow-y: scroll; width: 100vw">
+<body style="overflow-y: scroll; width: 100vw;
+background: -webkit-radial-gradient(closest-side, #8cbf62, #c0ff8d); 
+background: linear-gradient(to bottom right, #c6f89e, #ceffa7, #e0ffc6, #d9ffba, #d8ffb7);
+">
         <div class="wrapper" style="text-align: center; width: 100%; padding: 0 1rem;">
-        <div id="background" class="page-two"></div>
+        <!-- <div id="background" class="page-two"></div> -->
         <header class="main-header">
                 <nav id="nav">
                     <ul class="nav-links"> 
@@ -99,13 +102,13 @@
               <th> <p> QUANTITY</th>
               <th> <p> WATTAGE</th>
               <th> <p> HOURS</th>
-              <th> <p> SUB TOTAL</th>
+              <!-- <th> <p> SUB TOTAL</th> -->
               <th><p style="visibility:hidden;">dummy</p></th>
             </tr>
             <div class="entry" id="entry-0">
             <tr>
               <td> <select required id="appliance-0" class="appliances">
-                <option value="" selected hidden>Select Appliance</option>
+                <option value="" selected hidden>Select</option>
             </select></td>
               <td> <input id="qty-0" class="qty" min="0" max="999" value="0" type="number"></td>
               <td> <input id="rating-0" value="0" class="watts" type=text disabled/></td>
@@ -116,7 +119,7 @@
             <div class="entry" id="entry-1">
             <tr>
                 <td><select required id="appliance-1" class="appliances">
-                    <option value="" selected hidden>Select Appliance</option>
+                    <option value="" selected hidden>Select</option>
                 </select></td>
                 <td><input id="qty-1" class="qty" min="0" max="999" value="0" type="number"></td>
                 <td><input id="rating-1" value="0" class="watts" type=text disabled/></td>
@@ -127,7 +130,7 @@
             <div class="entry" id="entry-2">
             <tr>
                 <td><select required id="appliance-2" class="appliances">
-                    <option value="" selected hidden>Select Appliance</option>
+                    <option value="" selected hidden>Select</option>
                 </select></td>
                 <td><input id="qty-2" class="qty" min="0" max="999" value="0" type="number"></td>
                 <td><input id="rating-2" value="0" class="watts" type=text disabled/></td>
@@ -140,11 +143,11 @@
             <table class="buttontable" width="83%">
                 <div class="add-reset">
            <tr>
-            <td><button type="button" class="button" id="add-Row">+Add Appliance</button></td>
-            <td> <p class="showResult"
+            <td><button type="button" class="button reduce-text appliance-reduce-padding" id="add-Row">+Add Appliance</button></td>
+            <td> <p class="showResult reduce-text"
                 style="display: inline-block; cursor: pointer; padding: 0.5rem 1rem; background: orange; border-radius: 20px; outline: none;">
-                Show my results</p></td>
-            <td><button type="button" class="button" id="reset">Reset</button></td>
+                Results</p></td>
+            <td><button type="button" class="button reduce-text" id="reset">Reset</button></td>
            </tr>
            </div>
              </table>

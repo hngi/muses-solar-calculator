@@ -245,7 +245,7 @@ button:hover{
     font-weight: bold;
 }
 .add-reset{
-    width: 90%;
+    /* width: 90%; */
 }
 #add-Row{
     width: 160px;
@@ -363,16 +363,20 @@ th, td{
 
 
 #sunhoursByState, #breakdown{
-    width: 500px;
+    width: 380px;
     height: 400px;
 } 
 
+.daily {
+    display: none;
+}
 
 
 #power-needed{
     margin-top: 1%;
     font-weight: bold;
     font-size: 1.3em;
+    /* margin-bottom: -1rem; */
 }
 #analysis{
     width: 480px;
@@ -381,6 +385,19 @@ th, td{
     border-radius: 10px;
     margin: 1% auto;
     line-height: 1.8em;
+    margin-bottom: 3rem;
+}
+
+#summary{
+    position: relative;
+}
+#charts{
+    display: flex;
+    width: 100%;
+    /* margin-top: 5%; */
+    /* justify-content: space-evenly; */
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -426,12 +443,21 @@ th, td{
     margin-left: 4rem;
     
 }
-.headings p {
-    font-size: 16px !important;
+
+
+#charts {
+    flex-direction: column;
 }
 
 }
+
+
+
 @media screen and (max-width: 760px) {
+        .headings p,
+    .reduce-text {
+        font-size: 13px !important;
+    }
     #background {
         opacity: 0.5;
     }
@@ -481,20 +507,13 @@ th, td{
     margin-right: auto;
 }
 
-#summary{
-    position: relative;
-}
-#charts{
-    display: flex;
-    width: 100%;
-    /* margin-top: 5%; */
-    /* justify-content: space-evenly; */
-    justify-content: center;
-    align-items: center;
-}
+
 
 }
 @media screen and (max-width: 660px) {
+    .muse h1 {
+    font-size: 1.7rem;
+}
     .nav-links{
         width: 100%;
         margin: 0 auto;
@@ -516,7 +535,20 @@ th, td{
 }
 
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 560px) { 
+    #analysis {
+        width: 350px !important;
+    }
+
+    .appliance-reduce-padding {
+        padding: 0.8rem 0 !important;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    #add-Row {
+        width: 120px;
+    }
     .nav-links{
         width: 100%;
         margin: 0 auto;
