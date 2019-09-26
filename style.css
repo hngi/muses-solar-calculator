@@ -8,6 +8,7 @@
 body{
     font-family: 'Raleway';
     overflow: hidden;
+    /* text-align: center; */
 }
 
 
@@ -81,7 +82,7 @@ button:hover{
     align-items: center;
 }
 
-.btn{
+.btn, #viewChart{
     display: inline-block;
     padding: 0.6em;
     border-radius: 1em;
@@ -89,6 +90,7 @@ button:hover{
     color: white;
     font-weight: bold;
     cursor: pointer;
+    outline: none;
 }
 
 
@@ -258,13 +260,10 @@ button:hover{
 }
 
 .headings p:nth-child(2){
-    margin-left: 2%;
+    margin-left: 0.5%;
 }
 .headings p:nth-child(3){
-    margin-left: 0
-}
-.headings p:nth-child(4){
-    margin-left: 4%;
+    margin-left: -2%;
 }
 
 
@@ -311,10 +310,13 @@ input{
     padding-top: 0.3em;
 }
 
+
 #sunhoursByState, #breakdown{
     width: 500px;
-    height: 400px;
+    height: 250px;
 } 
+
+
 
 #power-needed{
     margin-top: 1%;
@@ -328,5 +330,15 @@ input{
     border-radius: 10px;
     margin: 1% auto;
     line-height: 1.8em;
+}
+
+#summary{
+    position: relative;
+}
+#charts{
+    display: flex;
+    width: 90%;
+    /* margin-top: 5%; */
+    justify-content: space-evenly;
 }
 

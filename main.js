@@ -9,7 +9,7 @@ $(document).ready(function(){
             }, 500)
     })
     $('#email').on('blur',function(){
-            console.log($(this))
+            
             $(this).animate({
                 "width" : "270px"
             }, 500)
@@ -73,7 +73,6 @@ $(document).ready(function(){
         switch(true){
             case hourlyEnergyRequired < 1000:
                     offer = "Muses 1kw Flexible Monocrystalline Solar Panels";
-                    console.log('I am here 1')
                     break;
             case hourlyEnergyRequired < 5000:
                     offer = "Muses 2-5kw Foldable Solar Panels"
@@ -164,32 +163,77 @@ $(document).ready(function(){
               Your daily energy need is <strong>${total}</strong> wattshr. The average sun-hours in <b>${residence}</b> is <b>${sunHours}</b>hours. Hence, you will need <b>${panels}</b> solar panel(s) to provide an average of <b>${hourlyEnergyRequired}</b> watts per sun-hour. Armed with this information, we would like to recommend our <b>${product}</b>.`
     
               $('#analysis').html(details)
+              createDataArrays()
+              $('#power-needed').html('<button id="viewChart" type="button">Click To View Chart</button>')
        }else{
-           console.log('fill')
-           $('#guide').html('<p style="color:red; font-weight:bold; font-size:1.5em;">Please enter your location</p>')
+            $('#guide').html('<p style="color:red; font-weight:bold; font-size:1.5em;">Please enter your location</p>')
        }
      })
 
+     let isOpen = false;
+
+     $('#power-needed').on('click', '#viewChart', function(){
+        
+        let showChart= `<div id="breakdown">
+                <canvas id="myChart_P"></canvas>
+     
+                </div>
+                <div id="sunhoursByState">
+                <canvas id="myChart_S"></canvas>
+
+                </div>`
+        // $('#analysis').css({position: 'relative'});
+        if(!isOpen){
+            $('#viewChart').text('Click To Close')
+            $('#analysis').css({position: 'absolute', left: 447});
+            $('#analysis').animate({
+                "top": "+=270"
+            }, 2000)
+            $('#charts').hide()
+            setTimeout(()=>{
+                $('#charts').show()
+                $('#charts').html(showChart)
+                createCharts('myChart_P','pie',dataEntry_appliances,dataEntry_powerConsumption, 'Your Power Consumption by Appliance' );
+                createCharts('myChart_S','bar',dataEntry_states,dataEntry_sunhours, 'Sun Hours by State' );
+            }, 1500)
+            isOpen = true;
+        }else{
+             $('#charts').hide()
+             $('#analysis').animate({
+                "top": "-=270"
+             }, 2000)
+             $('#viewChart').text('Click To View Chart')
+             isOpen = false;
+        }
+      
+    })
+
      
 
-     let obj1 = [{appliances: "Space Heater", quantity: "5", rating: "1500", hours: "1", consumptionPerDevice: "7500"}, {appliances: "CFL Light Bulb", quantity: "5", rating: "14", hours: "1", consumptionPerDevice: "70"},{appliances: "Iron", quantity: "4", rating: "1100", hours: "1.5", consumptionPerDevice: "6600"}]
-        let dataEntry_appliances = [];
-        let dataEntry_powerConsumption = [];
-        let  dataEntry_states = []
-        let dataEntry_sunhours = []
+     
+    let dataEntry_appliances, dataEntry_powerConsumption, dataEntry_states, dataEntry_sunhours;
+        
+    const createDataArrays = () =>{
+         dataEntry_appliances = [];
+         dataEntry_powerConsumption = [];
+         dataEntry_states = [];
+         dataEntry_sunhours = [];
         for (let i=0; i<obj.length; i++){
-            // console.log(dataEntry[i].appliances, dataEntry[i].consumptionPerDevice)
-            dataEntry_appliances.push(obj[i].appliances)
-            dataEntry_powerConsumption.push(obj[i].consumptionPerDevice)
+            if(obj[i].consumptionPerDevice != 0){
+                dataEntry_appliances.push(obj[i].appliances)
+                dataEntry_powerConsumption.push(obj[i].consumptionPerDevice)
+            }
+           
         }
 
         for(key in states){
             dataEntry_states.push(key)
             dataEntry_sunhours.push(states[key])
         }
-
-        // createCharts('myChart_P','bar',dataEntry_appliances,dataEntry_powerConsumption, 'Your Power Consumption by Appliance' )
-        // createCharts('myChart_S','line',dataEntry_states,dataEntry_sunhours, 'Sun Hours by State' )
+        
+        
+    }
+      
 
         let email = JSON.parse(localStorage.getItem('userData'))|| '';
         $('.loading').on('click', function(){
@@ -197,7 +241,6 @@ $(document).ready(function(){
             email = $('#email').val()
             if(email){
                 localStorage.setItem('userData', JSON.stringify(email))
-                console.log(email)
                 window.location.href = "index2.html"
             }else{
                 $('#email').addClass('error')
@@ -210,16 +253,25 @@ $(document).ready(function(){
         
         $("input[type=text], input[type=number]").val("0");
         $('#analysis').html('');
-        // $('#appliance-0').val($('#appliance-0').prop('selected'));
-        // $('select').val('');
-    
+        $('#analysis').css({position: 'static'});
+        $('#charts').html('')
+        $('#charts').hide()
+        $('#power-needed').html('TOTAL POWER NEEDED')
+        
     })
 
-
+    let colors = [
+        'rgba(255, 99, 132, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)',  'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)',
+        'rgba(255, 99, 132, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)',  'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)',
+        'rgba(255, 99, 132, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)',  'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)',
+        'rgba(255, 99, 132, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)',  'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)',
+        'rgba(255, 99, 132, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)',  'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)',
+        'rgba(255, 99, 132, 0.4)', 'rgba(54, 162, 235, 0.4)', 'rgba(255, 206, 86, 0.4)',  'rgba(75, 192, 192, 0.4)', 'rgba(153, 102, 255, 0.4)', 'rgba(255, 159, 64, 0.4)'
+    ];
 
 function createCharts(element, choice, xArray, yArray, title){
     var ctx = document.getElementById(element).getContext('2d');
-    console.log(choice, xArray, yArray)
+   
         var myChart = new Chart(ctx, {
         type: choice, 
         data: {
@@ -227,14 +279,7 @@ function createCharts(element, choice, xArray, yArray, title){
             datasets: [{
                 label: title,
                 data: yArray, 
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.4)',
-                    'rgba(54, 162, 235, 0.4)',
-                    'rgba(255, 206, 86, 0.4)',
-                    'rgba(75, 192, 192, 0.4)',
-                    'rgba(153, 102, 255, 0.4)',
-                    'rgba(255, 159, 64, 0.4)'
-                ],
+                backgroundColor: colors,
                 borderColor: [
                     'rgba(255, 99, 132, 1)',
                     'rgba(54, 162, 235, 1)',
