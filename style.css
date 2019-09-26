@@ -5,10 +5,7 @@
     box-sizing: border-box;
 }
 
-body{
-    overflow: hidden;
-    /* text-align: center; */
-}
+
 
 
 #wrapper{
@@ -512,7 +509,7 @@ th, td{
 }
 @media screen and (max-width: 660px) {
     .muse h1 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
     .nav-links{
         width: 100%;
@@ -543,6 +540,14 @@ th, td{
     .appliance-reduce-padding {
         padding: 0.8rem 0 !important;
     }
+
+    .highlighted-btn {
+        padding: 0.3rem 0.9rem;
+    }
+
+    .about-header {
+        font-size: 1.7rem;
+    }
 }
 
 @media screen and (max-width: 410px) {
@@ -563,6 +568,9 @@ th, td{
     .hours {
     width: 50px;
     margin: 7px;
+    }
+    .about-header {
+        font-size: 1.5rem;
     }
 .appliances {
     width: 60px;
