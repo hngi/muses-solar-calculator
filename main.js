@@ -118,21 +118,34 @@ $(document).ready(function() {
     Abuja: 8
   };
 
+  let formTable = document.querySelector('#formTable')
+
   const createRow = () => {
     count++;
 
-    let newRow = `<div id="entry-${count}" class="entry"><tr>
+    // let newRow = `<div id="entry-${count}" class="entry"><tr>
+    // <td><select id="appliance-${count}" class="appliances" required>
+    //               <option value="" selected hidden>Selects</option>
+    //             </select></td>
+    //             <td><input id="qty-${count}" class="qty" value="1" min="0" max="999" type="number"></td>
+    //             <td><input id="rating-${count}" value=0 class="watts" type=text disabled/></td>
+    //             <td><input id="hours-${count}" class="hours" min="0" max="24" step="1" value="0" type="number"></td>
+    //            <td> <input  id="daily-${count}" class="daily" value="0"></td>
+    //             <td><button class="remove-row">X</button></td>
+    // </tr></div>`;
+
+     let addRow = formTable.insertRow(4);
+     addRow.innerHTML = `<tr class="removeMe" id="pleaseRemoveMe">
     <td><select id="appliance-${count}" class="appliances" required>
                   <option value="" selected hidden>Selects</option>
                 </select></td>
                 <td><input id="qty-${count}" class="qty" value="1" min="0" max="999" type="number"></td>
                 <td><input id="rating-${count}" value=0 class="watts" type=text disabled/></td>
                 <td><input id="hours-${count}" class="hours" min="0" max="24" step="1" value="0" type="number"></td>
-               <td> <input  id="daily-${count}" class="daily" value="0"></td>
                 <td><button class="remove-row">X</button></td>
-    </tr></div>`;
+    </tr>`;
 
-    $("#entries").append(newRow);
+    // $("#entries").append(newRow);
     // let element =  $('.appliances')
     populateList(ratings, $(".appliances"));
   };
@@ -214,7 +227,7 @@ $(document).ready(function() {
 
   $("#worksheet").on("click", ".remove-row", function() {
     $(this)
-      .closest("div")
+      .closest("tr")
       .remove();
   });
 
@@ -378,19 +391,16 @@ $(document).ready(function() {
     $("#charts").hide();
     $("#power-needed").html("TOTAL POWER NEEDED");
 
-    const entries = document.querySelectorAll(".entry");
-    entries.forEach(entry => {
-      if (
-        entry.getAttribute("id") === "entry-0" ||
-        entry.getAttribute("id") === "entry-1" ||
-        entry.getAttribute("id") === "entry-2"
-      ) {
-        entry.style.display = "flex";
-      } else {
-        entry.style.display = "none";
-      }
-      console.log(entry.getAttribute("id"));
-    });
+    const entries = document.querySelectorAll(".removeMe");
+    // entries.forEach(entry => {
+    //   if ( entry.getAttribute("id") ===  "removeTest"  ) {
+    //     entry.style.display = "table-row";
+    //   } else {
+    //     entry.style.background = "black"
+    //   }
+      
+    // });
+    document.location.reload();
   });
 
   let colors = [

@@ -5,6 +5,9 @@
     box-sizing: border-box;
 }
 
+#worksheet {
+    margin-top: 10rem;
+}
 
 
 
@@ -350,7 +353,9 @@ th, td{
 }
 
 .remove-row{
-    display: inline-block;
+    /* display: inline-block; */
+    display: block;
+    margin-left: -0.3rem;
     border-radius: 20%;
     border: 1px solid #333;
     background: red;
@@ -546,6 +551,11 @@ th, td{
         width: 350px !important;
     }
 
+    .add-reset{
+    width: 90%;
+    margin: 0 auto;
+}
+
     .appliance-reduce-padding {
         padding: 0.8rem 0 !important;
     }
@@ -580,6 +590,10 @@ th, td{
     }
     .about-header {
         font-size: 1.5rem;
+    }
+    .add-reset{
+        width: 90%;
+        margin: 0 auto;
     }
 .appliances {
     width: 60px;

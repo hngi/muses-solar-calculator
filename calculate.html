@@ -54,50 +54,11 @@ background: linear-gradient(to bottom right, #c6f89e, #ceffa7, #e0ffc6, #d9ffba,
             
             <p style="font-weight: bold" id="guide"><span style="color:red; font-size:1.5em;">*</span>Select your state of residence</p>
         </div>
-       <!--- <div id="worksheet">
-            <form id="power-audit">
-            <div id='entries'>
-                <div class="headings">
-                    <p>APPLIANCES</p>
-                    <p>QUANTITY</p>
-                    <p>WATTAGE</p>
-                    <p>HOURS</p>
-                    <p>SUBTOTAL</p>
-                    <p style="visibility:hidden;">dummy</p>
-                </div>
-                <div class="entry" id="entry-0">
-                    <select required id="appliance-0" class="appliances">
-                        <option value="" selected hidden>Select Appliance</option>
-                    </select>
-                    <input id="qty-0" class="qty" min="0" max="999" value="0" type="number">
-                    <input id="rating-0" value="0" class="watts" type=text disabled/>
-                    <input id="hours-0" class="hours" min="0" max="24" step="1" value="0" type="number">
-                    <input id="daily-0" class="daily" value="0" type=text disabled/>
-                </div>
-                <div class="entry" id="entry-1">
-                    <select required id="appliance-1" class="appliances">
-                        <option value="" selected hidden>Select Appliance</option>
-                    </select>
-                    <input id="qty-1" class="qty" min="0" max="999" value="0" type="number">
-                    <input id="rating-1" value="0" class="watts" type=text disabled/>
-                    <input id="hours-1" class="hours" min="0" max="24" step="1" value="0" type="number">
-                    <input id="daily-1" class="daily" value="0" type=text disabled/>
-                    </div>
-                    <div class="entry" id="entry-2">
-                        <select required id="appliance-2" class="appliances">
-                            <option value="" selected hidden>Select Appliance</option>
-                        </select>
-                        <input id="qty-2" class="qty" min="0" max="999" value="0" type="number">
-                        <input id="rating-2" value="0" class="watts" type=text disabled/>
-                        <input id="hours-2" class="hours" min="0" max="24" step="1" value="0" type="number">
-                        <input id="daily-2" class="daily" value="0" type=text disabled/>
-                    </div>
-            </div>
-        -->
+       
         <div id="worksheet">
             <form id="power-audit">
             <div id='entries'>
-        <table class="input-table" style="width:100%">
+        <table class="input-table" id="formTable" style="width:100%">
             
             <tr class="headings">
               <th> <p> APPLIANCES</th>
@@ -107,7 +68,7 @@ background: linear-gradient(to bottom right, #c6f89e, #ceffa7, #e0ffc6, #d9ffba,
               <!-- <th> <p> SUB TOTAL</th> -->
               <th><p style="visibility:hidden;">dummy</p></th>
             </tr>
-            <div class="entry" id="entry-0">
+            <!-- <div class="entry" id="entry-0"> -->
             <tr>
               <td> <select required id="appliance-0" class="appliances">
                 <option value="" selected hidden>Select</option>
@@ -117,8 +78,8 @@ background: linear-gradient(to bottom right, #c6f89e, #ceffa7, #e0ffc6, #d9ffba,
               <td><input id="hours-0" class="hours" min="0" max="24" step="1" value="0" type="number"></td>
               <td> <input id="daily-0" class="daily" value="0" type=text disabled/></td>
             </tr>
-            </div>
-            <div class="entry" id="entry-1">
+            <!-- </div>
+            <div class="entry" id="entry-1"> -->
             <tr>
                 <td><select required id="appliance-1" class="appliances">
                     <option value="" selected hidden>Select</option>
@@ -128,9 +89,9 @@ background: linear-gradient(to bottom right, #c6f89e, #ceffa7, #e0ffc6, #d9ffba,
                 <td><input id="hours-1" class="hours" min="0" max="24" step="1" value="0" type="number"></td>
                 <td><input id="daily-1" class="daily" value="0" type=text disabled/></td>
             </tr>
-            </div>
-            <div class="entry" id="entry-2">
-            <tr>
+            <!-- </div>
+            <div class="entry" id="entry-2"> -->
+            <tr  class="removeMe" id="removeTest">
                 <td><select required id="appliance-2" class="appliances">
                     <option value="" selected hidden>Select</option>
                 </select></td>
@@ -139,7 +100,7 @@ background: linear-gradient(to bottom right, #c6f89e, #ceffa7, #e0ffc6, #d9ffba,
                 <td><input id="hours-2" class="hours" min="0" max="24" step="1" value="0" type="number"></td>
                 <td><input id="daily-2" class="daily" value="0" type=text disabled/></td>
             </tr>
-            </div>
+            <!-- </div> -->
           </table>
             </div>
             <table class="buttontable" width="83%">
