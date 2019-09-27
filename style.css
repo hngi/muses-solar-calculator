@@ -6,46 +6,45 @@
 }
 
 body{
-    font-family: 'Raleway';
     overflow: hidden;
-    
+    /* text-align: center; */
 }
+
 
 #wrapper{
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    height: 100vh;
     margin: 0 auto;
     user-select: none;
     opacity: 0.8;
-    border: 13px solid green;
 }
 #background{
     position: absolute;
     top: 0;
     right: 0;
-    left: 0;
     bottom: 0;
+    left: 0;
     width: 100%;
-    background: url(assets/Rectangle2.png) repeat;
+    background-image: url(assets/Rectangle2.png);
+    /* background-position:  */
     background-size: cover;
-    background-attachment: scroll;
+  background-position: center center;
+  background-repeat: no-repeat;
     z-index: -1;
-    overflow:visible;
-    /* border: 3px solid red; */
+    opacity: 0.8;
 
 }
-
+/* 
 #box{
     padding-left: 8%;
-}
+} */
 
 .page-two{
-    opacity: 0.2;
-    height: 145vh;
+    opacity: 0.4 !important;
 }
-.daily{
-    display:none;
+tr{
+    margin-bottom: 3px;
 }
 
 a{
@@ -78,7 +77,7 @@ button:hover{
     width: 90%;
     margin: 0 auto;
     padding-top: 1em;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -89,15 +88,14 @@ button:hover{
     align-items: center;
 }
 
-.btn, #viewChart{
+.btn{
     display: inline-block;
-    padding: 0.6em;
-    border-radius: 1em;
+    padding: 0.6em 1.3em;
+    border-radius: 2em;
     background: orange;
     color: white;
     font-weight: bold;
     cursor: pointer;
-    outline: none;
 }
 
 
@@ -114,7 +112,19 @@ button:hover{
     width: 60px;
 }
 
-.nav-links li:nth-child(2){
+/* .link-border {
+
+       padding: 0.6em 1.3em;
+       display: inline-block;
+       margin-right: 10px;
+}
+
+.link-border:hover {
+    border: 2px solid orange;
+    border-radius: 2em;
+} */
+
+/* .nav-links li:nth-child(2){
     animation-delay: 0.5s;    
 }
 
@@ -155,7 +165,7 @@ button:hover{
 .nav-links a:hover::before,
 .nav-links a:hover::after{
     transform: scaleX(1)
-}
+} */
 
 @keyframes slideIn{
     from{
@@ -180,7 +190,7 @@ button:hover{
     margin-bottom: 1.5rem;
 }
 
-#email{
+#name{
     padding: 0.6em 1em;
     border: #777 1px solid; 
     border-radius: 2em;
@@ -188,7 +198,7 @@ button:hover{
     width: 270px;
     outline: none;
 }
-#email.error{
+#name.error{
     border: 2px solid red;
 }
 
@@ -208,33 +218,86 @@ button:hover{
     left: 155px;
 } 
 
-.location, .add-reset{
+.location {
     display: flex;
-    width: 25%;
+    width: 100%;
+    margin: 0 auto;
     margin-top: 1em;
-    margin-left: 5%;
-    justify-content: space-between;
+    justify-content: center;
+    padding: 10px;
     align-items: center;
+    height: 50px;
+    padding-left: 8%;
 }
-.location p{
-    font-weight: bold;
+
+.location > * {
+    margin: 15px;
 }
+
+ /* .add-reset{
+   display: flex;
+   flex-flow: row wrap;
+   justify-content:start;
+   align-items: center;
+   border: 1px solid red;
+   margin: 1% auto;
+   width: 70%;
+   padding: 0;
+} */
+
 .add-reset{
-    width: 90%;
+    width: 72%;
+    margin: 0 auto;
 }
-#add-Row{
-    width: 160px;
+
+#formTable td:nth-child(5){
+    width: 15px;
 }
-#sunhours{
+
+
+.buttontable{
     position: relative;
+    text-align: left;
+    width: 100%;
+    margin: 15px auto;
     
 }
 
-#guide{
-    position: absolute;
-    left: 26%;
-    font-size: 0.7em;
+
+.buttontable td:nth-child(2){
+    text-align: left;
+    width: 40%;
+}
+.buttontable td:nth-child(3){
+    text-align: center;
+    width: 15%;
+}
+
+
+.add-reset .reduce-text{
+    border: 1px solid green;
+    outline: none;
+}
+.location p{
     font-weight: bold;
+    margin-top: -4px;
+}
+
+#add-Row{
+    width: 160px;
+}
+
+
+#peak{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 250px;
+    align-items: start;
+    justify-content: space-between;
+}
+#guide{
+    font-size: 0.7rem;
 }
 #entries{
     margin: 0 auto;
@@ -242,38 +305,30 @@ button:hover{
     margin-top: 2em;
 }
 
-.entry{
-    display: grid;
-    grid-gap: 4em;
-    margin-bottom: 2em;
-    grid-template-columns: 4fr 2fr 3fr 2fr 1fr 1fr; 
+.headings{
+    border-bottom: 2px solid red;
+    margin-bottom: 1rem;
 }
 
-.headings{
-    display: flex;
-    margin-left: 0;
-    width: 100%;
-    margin: 5% auto 2%;
-    justify-content: space-between;
-}
 .headings p{
     display: inline;
     font-weight: bold;
     font-size: 1.4rem;
 }
 
+.muse{
+    /* margin-: 50px; */
+}
+
 .headings p:nth-child(1){
-    margin-left: 4%;
+    /* margin-left: 4%; */
 }
 
 .headings p:nth-child(2){
-    margin-left: 0.5%;
+    /* margin-left: 0.5%; */
 }
 .headings p:nth-child(3){
-    margin-left: -2%;
-}
-.headings p:nth-child(5){
-    display: none;
+    /* margin-left: -2%; */
 }
 
 
@@ -285,15 +340,24 @@ input{
     border-radius: 5px;
 }
 .muse h1{
-    margin: 3% auto;
-    width: 50%;
-    border: 1px solid #777;
-    border-radius: 6px;
-}
+    margin: 2rem auto;
+    font-size: 2rem;
+  }
 
  select{
     padding: 2em;
 } 
+th, td{
+    margin-bottom: 3rem;
+}
+
+.qty,
+.watts,
+.hours,
+.daily {
+    width: 80px;
+    margin: 15px;
+}
 
 .button{
     padding: 0.8em 2em;
@@ -307,8 +371,8 @@ input{
 #reset{
     background: red;
     padding: 0.6em;
-    margin-right: 10%;
     width: 100px;
+    
 }
 
 .remove-row{
@@ -317,21 +381,25 @@ input{
     border: 1px solid #333;
     background: red;
     color: white;
-    padding-top: 0.3em;
+    padding: 0.4rem 0.6rem;
 }
 
 
 #sunhoursByState, #breakdown{
-    width: 500px;
-    height: 250px;
+    width: 380px;
+    height: 400px;
 } 
 
+.daily {
+    display: none;
+}
 
 
 #power-needed{
-    margin-top: 1%;
+    margin-top: 3%;
     font-weight: bold;
     font-size: 1.3em;
+    /* margin-bottom: -1rem; */
 }
 #analysis{
     width: 480px;
@@ -340,6 +408,7 @@ input{
     border-radius: 10px;
     margin: 1% auto;
     line-height: 1.8em;
+    margin-bottom: 3rem;
 }
 
 #summary{
@@ -347,8 +416,183 @@ input{
 }
 #charts{
     display: flex;
-    width: 90%;
+    width: 100%;
+    margin: 5px;
     /* margin-top: 5%; */
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    justify-content: center;
+    align-items: center;
 }
 
+
+
+@media screen and (max-width: 1200px) {
+    .nav-links{
+        width: 40%;
+    }
+
+    
+#info{
+    width: 40%;
+    /* just this up */
+}
+
+.entry {
+    /* grid-gap: 1rem;
+    grid-template-columns: 1fr 4fr 1fr 1fr 1fr 1fr; */
+}
+
+}
+
+@media screen and (max-width: 940px) {
+    .nav-links{
+        width: 50%;
+    }
+    #info{
+    width: 50%;
+}
+
+.qty,
+.watts,
+.hours,
+.daily {
+    width: 80px;
+    margin: 7px;
+}
+.appliances {
+    width: 110px;
+}
+.headings  {
+    width: 90%;
+    margin-left: 4rem;
+    
+}
+
+
+#charts {
+    flex-direction: column;
+}
+
+}
+
+
+
+@media screen and (max-width: 760px) {
+        .headings p,
+    .reduce-text {
+        font-size: 13px !important;
+    }
+    #background {
+        opacity: 0.5;
+    }
+    .nav-links{
+        width: 60%;
+    }
+    #info{
+    width: 100%;
+}
+
+#info {
+    left: 0;
+}
+
+.user-info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#info h1 {
+    text-align: center;
+    font-size: 2.3rem;
+    margin-bottom: 2rem !important;
+}
+#info p {
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    margin-bottom: 2rem !important;
+    font-weight: bold;
+}
+
+
+#userinfo {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.headings {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+}
+@media screen and (max-width: 660px) {
+    .muse h1 {
+    font-size: 1.7rem;
+}
+    .nav-links{
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .qty,
+    .watts,
+    .hours {
+    width: 50px;
+    margin: 10px;
+    }
+.appliances {
+    width: 110px;
+
+}
+.buttontable{
+    width: 100%;
+    margin-bottom: 10px;
+    
+}
+
+}
+@media screen and (max-width: 560px) { 
+    #analysis {
+        width: 350px !important;
+    }
+
+    .appliance-reduce-padding {
+        padding: 0.8rem 0 !important;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    #add-Row {
+        width: 120px;
+    }
+    .nav-links{
+        width: 100%;
+        margin: 0 auto;
+    }
+    #nav {
+        width: 100%;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .qty,
+    .watts,
+    .hours {
+    width: 50px;
+    margin: 7px;
+    }
+.appliances {
+    width: 60px;
+}
+.headings  {
+    width: 120%;
+    margin-left: 4rem;
+    
+}
+}
