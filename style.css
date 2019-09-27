@@ -564,7 +564,10 @@ th, td{
     #analysis {
         width: 350px !important;
     }
-
+.add-reset{
+    width: 90%;
+    margin: 0 auto;
+}
     .appliance-reduce-padding {
         padding: 0.8rem 0 !important;
     }
@@ -589,6 +592,11 @@ th, td{
     width: 50px;
     margin: 7px;
     }
+    .add-reset{
+        width: 90%;
+        margin: 0 auto;
+    }
+    
 .appliances {
     width: 60px;
 }
