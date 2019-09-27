@@ -495,7 +495,16 @@ th, td{
     margin-right: auto;
 }
 .muse h1 {
-    font-size: 2rem;
+    font-size: 1.7rem;
+    margin: 1.3rem auto;
+}
+
+.peak-sun {
+    font-size: 14px;
+}
+
+.location {
+    flex-direction: column;
 }
 
 .headings {
@@ -509,7 +518,7 @@ th, td{
 }
 @media screen and (max-width: 660px) {
     .muse h1 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
     .nav-links{
         width: 100%;
