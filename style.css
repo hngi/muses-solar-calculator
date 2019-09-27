@@ -29,8 +29,7 @@ body{
     background-image: url(assets/Rectangle2.png);
     /* background-position:  */
     background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+    background-repeat: no-repeat;
     z-index: -1;
     opacity: 0.8;
 
