@@ -187,7 +187,7 @@ $(document).ready(function(){
             $('#viewChart').text('Click To Close')
             $('#analysis').css({position: 'absolute', left: 447});
             $('#analysis').animate({
-                "top": "+=270"
+                "top": "+=540"
             }, 2000)
             $('#charts').hide()
             setTimeout(()=>{
@@ -200,7 +200,7 @@ $(document).ready(function(){
         }else{
              $('#charts').hide()
              $('#analysis').animate({
-                "top": "-=270"
+                "top": "-=540"
              }, 2000)
              $('#viewChart').text('Click To View Chart')
              isOpen = false;

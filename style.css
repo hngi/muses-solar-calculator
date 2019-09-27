@@ -18,6 +18,7 @@ body{
     margin: 0 auto;
     user-select: none;
     opacity: 0.8;
+    border: 13px solid green;
 }
 #background{
     position: absolute;
@@ -31,6 +32,8 @@ body{
     background-attachment: scroll;
     z-index: -1;
     overflow:visible;
+    /* border: 3px solid red; */
+
 }
 
 #box{
@@ -41,7 +44,9 @@ body{
     opacity: 0.2;
     height: 145vh;
 }
-
+.daily{
+    display:none;
+}
 
 a{
     text-decoration: none;
@@ -266,6 +271,9 @@ button:hover{
 }
 .headings p:nth-child(3){
     margin-left: -2%;
+}
+.headings p:nth-child(5){
+    display: none;
 }
 
 
