@@ -168,7 +168,7 @@ $(document).ready(function() {
     // </tr></div>`;
     let addRow = formTable.insertRow(4);
     addRow.innerHTML = `<tr>
-    <td><select id="appliance-${count}" class="appliances" style="width:224px;" required>
+    <td><select id="appliance-${count}" class="appliances" required>
                   <option value="" selected hidden>Selects</option>
                 </select></td>
                 <td><input id="qty-${count}" class="qty" value="1" min="0" max="999" type="number"></td>
