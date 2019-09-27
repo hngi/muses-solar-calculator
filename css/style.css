@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,600,700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-size: 1.6rem; }
+
+#landing-body {
+  background: url(../assets/img/body-bg.jpg) repeat #ffffff; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+#landing-body header {
+  min-height: 100vh;
+  background-image: linear-gradient(#315492, #264377);
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  #landing-body header .header-bar {
+    margin-top: 5rem;
+    width: 80%;
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    align-items: center;
+    justify-content: center; }
+    #landing-body header .header-bar ul {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 4.5rem; }
+      #landing-body header .header-bar ul li {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #c1cbdd;
+        transition: all 200ms ease-in-out; }
+        #landing-body header .header-bar ul li:hover {
+          color: white; }
+    #landing-body header .header-bar .logo {
+      height: 6rem;
+      overflow: hidden; }
+      #landing-body header .header-bar .logo img {
+        height: 120%; }
+    #landing-body header .header-bar .calculate-link {
+      font-size: 2rem;
+      font-weight: 700;
+      padding: 1rem 3rem;
+      border-radius: 10rem;
+      color: white;
+      background-color: #264377; }
+  #landing-body header .header-content {
+    display: grid;
+    width: 75%;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 8rem;
+    align-items: center;
+    justify-content: center; }
+    #landing-body header .header-content .display-message h1 {
+      color: white;
+      font-size: 8rem;
+      line-height: 9rem; }
+    #landing-body header .header-content .display-message h2 {
+      color: #c1cbdd;
+      font-size: 3rem; }
+    #landing-body header .header-content .display-message .header-buttons {
+      display: flex;
+      width: 50%;
+      margin-top: 7rem;
+      justify-content: space-between; }
+      #landing-body header .header-content .display-message .header-buttons button {
+        padding: 1rem 2.5rem;
+        font-size: 2rem;
+        border-radius: 4rem;
+        transition: all 300ms ease-in-out;
+        color: white;
+        cursor: pointer; }
+      #landing-body header .header-content .display-message .header-buttons .learnmore {
+        border: 0.3rem solid #54b874;
+        background-color: #54b874; }
+        #landing-body header .header-content .display-message .header-buttons .learnmore:hover {
+          background-color: transparent; }
+      #landing-body header .header-content .display-message .header-buttons .calculate {
+        border: 0.3rem solid #54b874;
+        background-color: transparent; }
+        #landing-body header .header-content .display-message .header-buttons .calculate:hover {
+          background-color: #54b874; }
+
+#landing-body .curved-bg {
+  background-image: url(../../assets/img/curved-bg.png);
+  background-size: cover;
+  position: relative;
+  min-height: 15rem; }
+  #landing-body .curved-bg .did-you-know {
+    width: 50vw;
+    position: absolute;
+    top: -5rem;
+    background-color: white;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5rem;
+    border-radius: 1rem;
+    border: 0.3rem solid #28467c30; }
