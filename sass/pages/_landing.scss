@@ -1,0 +1,124 @@
+#landing-body {
+  header {
+    min-height: 100vh;
+    background-image: linear-gradient(#315492, #264377);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header-bar {
+      margin-top: 5rem;
+      width: 80%;
+      display: grid;
+      grid-template-columns: max-content 1fr max-content;
+      align-items: center;
+      justify-content: center;
+
+      ul {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 4.5rem;
+        li {
+          font-size: 2rem;
+          font-weight: 700;
+          color: #c1cbdd;
+          transition: all 200ms ease-in-out;
+
+          &:hover {
+            color: white;
+          }
+        }
+      }
+
+      .logo {
+        height: 6rem;
+        // width: 3rem;
+        overflow: hidden;
+
+        img {
+          height: 120%;
+        }
+      }
+
+      .calculate-link {
+        font-size: 2rem;
+        font-weight: 700;
+        padding: 1rem 3rem;
+        border-radius: 10rem;
+        color: white;
+        background-color: #264377;
+      }
+    }
+    .header-content {
+      display: grid;
+      width: 75%;
+      grid-template-columns: 1fr 1fr;
+      margin-top: 8rem;
+      align-items: center;
+      justify-content: center;
+
+      .display-message {
+        h1 {
+          color: white;
+          font-size: 8rem;
+          line-height: 9rem;
+        }
+        h2 {
+          color: #c1cbdd;
+          font-size: 3rem;
+        }
+        .header-buttons {
+          display: flex;
+          width: 50%;
+          margin-top: 7rem;
+          justify-content: space-between;
+          button {
+            padding: 1rem 2.5rem;
+            font-size: 2rem;
+            border-radius: 4rem;
+            transition: all 300ms ease-in-out;
+            color: white;
+            cursor: pointer;
+          }
+
+          .learnmore {
+            border: 0.3rem solid #54b874;
+            background-color: #54b874;
+
+            &:hover {
+              background-color: transparent;
+            }
+          }
+          .calculate {
+            border: 0.3rem solid #54b874;
+            background-color: transparent;
+
+            &:hover {
+              background-color: #54b874;
+            }
+          }
+        }
+      }
+    }
+  }
+  .curved-bg {
+    background-image: url(../../assets/img/curved-bg.png);
+    background-size: cover;
+    position: relative;
+    min-height: 15rem;
+
+    .did-you-know {
+      width: 50vw; //Increase width for responsive designing
+      position: absolute;
+      top: -5rem;
+      background-color: white;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 5rem;
+      border-radius: 1rem;
+      border: 0.3rem solid #28467c30;
+    }
+  }
+}
