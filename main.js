@@ -137,7 +137,7 @@ $(document).ready(function() {
      let addRow = formTable.insertRow(4);
      addRow.innerHTML = `<tr class="removeMe" id="pleaseRemoveMe">
     <td><select id="appliance-${count}" class="appliances" required>
-                  <option value="" selected hidden>Selects</option>
+                  <option value="" selected hidden>Select</option>
                 </select></td>
                 <td><input id="qty-${count}" class="qty" value="1" min="0" max="999" type="number"></td>
                 <td><input id="rating-${count}" value=0 class="watts" type=text disabled/></td>
