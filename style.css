@@ -644,6 +644,10 @@ table.buttontable td{
         width: 350px !important;
     }
 
+    .link-border {
+        padding: 0;
+    }
+
     .add-reset{
     width: 90%;
     margin: 0 auto;
