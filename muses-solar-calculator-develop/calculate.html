@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" rel="stylesheet">
+    <link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" />
+    <link href="jquery-ui-1.12.1/dist/css/select2.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
+    <link rel="shortcut icon" href="./assets/muses.png" type="image/png">
+    <script src="jquery-3.4.1.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+    <script src="jquery-ui-1.12.1/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+   
+    
+    <title>Muse Solar Calculator | Calculate</title>
+    <style>
+        html, body {
+            font-family: "Montserrat", sans-serif;
+        }
+    </style>
+        
+
+</head>
+<body style="overflow:visible">
+        <div class="wrapper" style="text-align: center; width: 100%; padding: 0 1rem;">
+        <div id="background" class="page-two"></div>
+        <header class="main-header">
+                <nav id="nav">
+                    <ul class="nav-links"> 
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a id="calc-02"class="btn showResult">CALCULATE</a></li>
+                    </ul>
+                </nav>
+        </header>
+        <div id="box">
+        <div class="muse">
+            <h1 >MUSE SOLAR CALCULATOR</h1>
+            <div class="location" >
+                <p>Let's get the Peak Sun Hours in your city:</p>
+                <select id="sunhours">
+                        <option value="" selected hidden>Select State</option>
+                </select>
+            </div>
+            
+            <p style="font-weight: bold" id="guide"><span style="color:red; font-size:1.5em;">*</span>Select your state of residence</p>
+        </div>
+        <div id="worksheet">
+            <form id="power-audit">
+            <div id='entries'>
+                <div class="headings">
+                    <p>APPLIANCES</p>
+                    <p>QUANTITY</p>
+                    <p>WATTAGE</p>
+                    <p>HOURS</p>
+                    <p>SUBTOTAL</p>
+                    <p style="visibility:hidden;">dummy</p>
+                </div>
+                <div class="entry" id="entry-0">
+                    <select required id="appliance-0" class="appliances">
+                        <option value="" selected hidden>Select Appliance</option>
+                    </select>
+                    <input id="qty-0" class="qty" min="0" max="999" value="0" type="number">
+                    <input id="rating-0" value="0" class="watts" type=text disabled/>
+                    <input id="hours-0" class="hours" min="0" max="24" step="1" value="0" type="number">
+                    <input id="daily-0" class="daily" value="0" type=text disabled/>
+                </div>
+                <div class="entry" id="entry-1">
+                    <select required id="appliance-1" class="appliances">
+                        <option value="" selected hidden>Select Appliance</option>
+                    </select>
+                    <input id="qty-1" class="qty" min="0" max="999" value="0" type="number">
+                    <input id="rating-1" value="0" class="watts" type=text disabled/>
+                    <input id="hours-1" class="hours" min="0" max="24" step="1" value="0" type="number">
+                    <input id="daily-1" class="daily" value="0" type=text disabled/>
+                    </div>
+                    <div class="entry" id="entry-2">
+                        <select required id="appliance-2" class="appliances">
+                            <option value="" selected hidden>Select Appliance</option>
+                        </select>
+                        <input id="qty-2" class="qty" min="0" max="999" value="0" type="number">
+                        <input id="rating-2" value="0" class="watts" type=text disabled/>
+                        <input id="hours-2" class="hours" min="0" max="24" step="1" value="0" type="number">
+                        <input id="daily-2" class="daily" value="0" type=text disabled/>
+                    </div>
+            </div>
+            <div class="add-reset">
+            <button type="button" class="button" id="add-Row">+Add Appliance</button>
+            <p class="showResult"
+                style="display: inline-block; cursor: pointer; padding: 0.5rem 1rem; background: orange; border-radius: 20px; outline: none;">
+                Show my results</p>
+            <button type="button" class="button" id="reset">Reset</button>
+
+            </div>
+            <div id="summary">
+                
+                <p id="power-needed">TOTAL POWER NEEDED</p>
+                <div id="charts" style="display: flex; justify-content: space-around; align-items: center; margin: 3rem auto"></div>
+                
+                <div id="analysis"></div>
+            </div>
+            </form>
+            </div>
+        </div>    
+
+        </div>
+        <script src="main.js"></script>
+    
+</body>
+</html>
+
+
