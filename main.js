@@ -29,7 +29,7 @@ $(document).ready(function() {
     );
   });
 
-  let count = 2;
+  let count = 3;
   let total = 0;
   let report,
     details,
@@ -41,7 +41,7 @@ $(document).ready(function() {
   // parseFloat($(this).val()).toFixed(2)
   report = false;
   let obj = [];
-
+  
   let ratings = {
     "LED Light Bulb": 10,
     "CFL Light Bulb": 14,
@@ -150,9 +150,8 @@ $(document).ready(function() {
     Abuja: 8
   };
 
+  let formTable = document.querySelector('#formTable')
 
-  let formTable = document.querySelector('#formTable') 
-  console.log(formTable)
   const createRow = () => {
     count++;
 
@@ -166,18 +165,19 @@ $(document).ready(function() {
     //            <td> <input  id="daily-${count}" class="daily" value="0"></td>
     //             <td><button class="remove-row">X</button></td>
     // </tr></div>`;
-    let addRow = formTable.insertRow(4);
-    addRow.innerHTML = `<tr>
+      console.log(count)
+     let addRow = formTable.insertRow(count);
+     addRow.innerHTML = `<tr class="removeMe" id="pleaseRemoveMe">
     <td><select id="appliance-${count}" class="appliances" required>
-                  <option value="" selected hidden>Selects</option>
+                  <option value="" selected hidden>Select</option>
                 </select></td>
                 <td><input id="qty-${count}" class="qty" value="1" min="0" max="999" type="number"></td>
                 <td><input id="rating-${count}" value=0 class="watts" type=text disabled/></td>
                 <td><input id="hours-${count}" class="hours" min="0" max="24" step="1" value="0" type="number"></td>
+                <td> <input  id="daily-${count}" class="daily" value="0"></td>
                 <td><button class="remove-row">X</button></td>
     </tr>`;
-    
-   
+
     // $("#entries").append(newRow);
     // let element =  $('.appliances')
     populateList(ratings, $(".appliances"));
@@ -197,17 +197,17 @@ $(document).ready(function() {
     let offer = "";
     switch (true) {
       case hourlyEnergyRequired < 1000:
-        offer = "Muses 1kw Flexible Monocrystalline Solar Panels";
+        offer = "Muses 1kwh Flexible Monocrystalline Solar Panels";
         console.log("I am here 1");
         break;
       case hourlyEnergyRequired < 5000:
-        offer = "Muses 2-5kw Foldable Solar Panels";
+        offer = "Muses 2-5kwh Foldable Solar Panels";
         break;
       case hourlyEnergyRequired < 7000:
-        offer = "Muses 7kw Polycrystalline High Efficient Solar Panels";
+        offer = "Muses 7kwh Polycrystalline High Efficient Solar Panels";
         break;
       case hourlyEnergyRequired < 10000:
-        offer = "Muses 10kw Polycrystalline Solar Panels";
+        offer = "Muses 10kwh Polycrystalline Solar Panels";
         break;
       default:
         offer = "Muses Industrial Workhorse Polycrystalline Solar Panels";
@@ -254,20 +254,19 @@ $(document).ready(function() {
   });
 
   $("#add-Row").on("click", function() {
-    
     if(!report){
-    createRow(ratings);
-    console.log("here");
-    }
+      createRow(ratings);
+      console.log("here");
+      }
   });
 
   $("#worksheet").on("click", ".remove-row", function() {
     $(this)
       .closest("tr")
       .remove();
+      count--
   });
 
-  
   document.querySelectorAll(".showResult").forEach(elem => {
     elem.addEventListener("click", function() {
       if(!report){
@@ -300,7 +299,7 @@ $(document).ready(function() {
           });
           product = recommendProduct(hourlyEnergyRequired);
           details = `Dear <b>${name}</b>,
-                your daily energy need is <strong>${total}</strong> wattshr (+25% tolerance). <b>${residence}</b> has an average of <b>${sunHours}</b> sun-hours. Hence, you will need <b>${panels}</b> solar panel(s) to provide an average of <b>${hourlyEnergyRequired}</b> watts per sun-hour. Armed with this information, we would like to recommend our <b>${product}</b>.`;
+                your daily energy need is <strong>${total}</strong> watts-hour (+25% tolerance). <b>${residence}</b> has an average of <b>${sunHours}</b> sun-hours. Hence, you will need <b>${panels}</b> solar panel(s) to provide an average of <b>${hourlyEnergyRequired}</b> watts per sun-hour. Armed with this information, we would like to recommend our <b>${product}</b>.`;
   
           $("#analysis").html(details);
           createDataArrays();
@@ -336,7 +335,7 @@ $(document).ready(function() {
                 </div>`;
     // $('#analysis').css({position: 'relative'});
     if (!isOpen) {
-      $("#viewChart").text("Click To Close Chart");
+      $("#viewChart").text("Click to close Chart");
       //  $("#analysis").css({ position: "absolute", left: 447 });
       //  $("#analysis").animate(
       //    {
@@ -432,20 +431,16 @@ $(document).ready(function() {
     $("#charts").hide();
     $("#power-needed").html("TOTAL POWER NEEDED");
     report = false;
-
-    const entries = document.querySelectorAll(".entry");
-    entries.forEach(entry => {
-      if (
-        entry.getAttribute("id") === "entry-0" ||
-        entry.getAttribute("id") === "entry-1" ||
-        entry.getAttribute("id") === "entry-2"
-      ) {
-        entry.style.display = "flex";
-      } else {
-        entry.style.display = "none";
-      }
-      console.log(entry.getAttribute("id"));
-    });
+    const entries = document.querySelectorAll(".removeMe");
+    // entries.forEach(entry => {
+    //   if ( entry.getAttribute("id") ===  "removeTest"  ) {
+    //     entry.style.display = "table-row";
+    //   } else {
+    //     entry.style.background = "black"
+    //   }
+      
+    // });
+    document.location.reload();
   });
 
   let colors = [
@@ -489,8 +484,10 @@ $(document).ready(function() {
 
   function createCharts(element, choice, xArray, yArray, title) {
     var ctx = document.getElementById(element).getContext("2d");
-    console.log(choice, xArray, yArray);
+    // console.log(choice, xArray, yArray);
     var myChart = new Chart(ctx, {
+      type: choice,
+      type: choice,
       type: choice,
       data: {
         labels: xArray,

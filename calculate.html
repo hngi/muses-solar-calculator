@@ -20,7 +20,9 @@
     <style>
         html, body {
             font-family: "Montserrat", sans-serif;
+            overflow-x: hidden;
         }
+        
     </style>
         
 
@@ -36,11 +38,23 @@ background: linear-gradient(to bottom right, #c6f89e, #ceffa7, #e0ffc6, #d9ffba,
                     <ul class="nav-links"> 
                         <li><a href="index.html">HOME</a></li>
                         <li><a href="about.html">ABOUT</a></li>
-                        <li><a id="calc-02"class="btn showResult">CALCULATE</a></li>
+                        <li><a id="calc-02"class="btn showResult highlighted-btn">CALCULATE</a></li>
                     </ul>
                 </nav>
         </header>
         <div id="box">
+        <!-- <div class="muse">
+            <h1 >MUSE SOLAR CALCULATOR</h1>
+            <div class="location" >
+                <p class="peak-sun">Let's get the Peak Sun Hours in your city:</p>
+                <select id="sunhours">
+                        <option value="" selected hidden>Select State</option>
+                </select>
+            </div>
+            
+            <p style="font-weight: bold" id="guide"><span style="color:red; font-size:1.5em;">*</span>Select your state of residence</p>
+        </div> -->
+
         <div class="muse">
             <h1 >MUSE SOLAR CALCULATOR</h1>
             <div class="location" >
@@ -51,15 +65,13 @@ background: linear-gradient(to bottom right, #c6f89e, #ceffa7, #e0ffc6, #d9ffba,
                     </select>
                     <p style="font-weight: bold" id="guide"><span style="color:red; font-size:1.2rem;">*</span>Select your state of residence</p>
                 </div>
-               
-               
             </div>
         </div>
-      
+       
         <div id="worksheet">
             <form id="power-audit">
             <div id='entries'>
-        <table id="formTable" class="input-table" style="width:100%">
+        <table class="input-table" id="formTable" style="width:100%">
             
             <tr class="headings">
               <th> <p> APPLIANCES</th>
@@ -70,7 +82,7 @@ background: linear-gradient(to bottom right, #c6f89e, #ceffa7, #e0ffc6, #d9ffba,
               <th><p style="visibility:hidden;">dummy</p></th>
             </tr>
             <!-- <div class="entry" id="entry-0"> -->
-            <tr >
+            <tr>
               <td> <select required id="appliance-0" class="appliances">
                 <option value="" selected hidden>Select</option>
             </select></td>
@@ -79,8 +91,8 @@ background: linear-gradient(to bottom right, #c6f89e, #ceffa7, #e0ffc6, #d9ffba,
               <td><input id="hours-0" class="hours" min="0" max="24" step="1" value="0" type="number"></td>
               <td> <input id="daily-0" class="daily" value="0" type=text disabled/></td>
             </tr>
-            <!-- </div> -->
-            <!-- <div class="entry" id="entry-1"> -->
+            <!-- </div>
+            <div class="entry" id="entry-1"> -->
             <tr>
                 <td><select required id="appliance-1" class="appliances">
                     <option value="" selected hidden>Select</option>
@@ -90,9 +102,9 @@ background: linear-gradient(to bottom right, #c6f89e, #ceffa7, #e0ffc6, #d9ffba,
                 <td><input id="hours-1" class="hours" min="0" max="24" step="1" value="0" type="number"></td>
                 <td><input id="daily-1" class="daily" value="0" type=text disabled/></td>
             </tr>
-            <!-- </div> -->
-            <!-- <div class="entry" id="entry-2"> -->
-            <tr>
+            <!-- </div>
+            <div class="entry" id="entry-2"> -->
+            <tr  class="removeMe" id="removeTest">
                 <td><select required id="appliance-2" class="appliances">
                     <option value="" selected hidden>Select</option>
                 </select></td>
@@ -104,19 +116,17 @@ background: linear-gradient(to bottom right, #c6f89e, #ceffa7, #e0ffc6, #d9ffba,
             <!-- </div> -->
           </table>
             </div>
-            <div class="add-reset">
             <table class="buttontable">
-                
+                <div class="add-reset">
            <tr>
             <td><button type="button" class="button reduce-text appliance-reduce-padding" id="add-Row">+Add Appliance</button></td>
             <td> <p class="showResult reduce-text"
-                style="display: inline-block; cursor: pointer; padding: 0.5rem 1rem; background: orange; border-radius: 20px; outline: none; color: white;">
+                style="display: inline-block; cursor: pointer; padding: 0.5rem 1rem; background: orange; border-radius: 20px; outline: none;">
                 Results</p></td>
             <td><button type="button" class="button reduce-text" id="reset">Reset</button></td>
            </tr>
-            </table>
            </div>
-             
+             </table>
             
             <div id="summary">
                 <p id="power-needed">TOTAL POWER NEEDED</p>

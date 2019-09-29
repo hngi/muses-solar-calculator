@@ -5,35 +5,35 @@
     box-sizing: border-box;
 }
 
-#worksheet {
-    margin-top: 10rem;
+body{
+    overflow: hidden;
+    /* text-align: center; */
 }
 
 
 #wrapper{
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0 auto;
     user-select: none;
     opacity: 0.8;
+    overflow:visible;
 }
 #background{
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0;
     left: 0;
+    bottom: 0;
     width: 100%;
-    background-image: url(assets/Rectangle2.png);
-    /* background-position:  */
+    background: url(assets/Rectangle2.png) repeat;
     background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+    background-attachment: scroll;
     z-index: -1;
-    opacity: 0.8;
-
+    overflow:visible;
 }
+
 /* 
 #box{
     padding-left: 8%;
@@ -41,10 +41,10 @@
 
 .page-two{
     opacity: 0.4 !important;
+    height: 145vh;
+    
 }
-tr{
-    margin-bottom: 3px;
-}
+
 
 a{
     text-decoration: none;
@@ -111,7 +111,7 @@ button:hover{
     width: 60px;
 }
 
-.link-border {
+/* .link-border {
 
        padding: 0.6em 1.3em;
        display: inline-block;
@@ -121,9 +121,9 @@ button:hover{
 .link-border:hover {
     border: 2px solid orange;
     border-radius: 2em;
-} 
+} */
 
-.nav-links li:nth-child(2){
+/* .nav-links li:nth-child(2){
     animation-delay: 0.5s;    
 }
 
@@ -164,7 +164,7 @@ button:hover{
 .nav-links a:hover::before,
 .nav-links a:hover::after{
     transform: scaleX(1)
-}
+} */
 
 @keyframes slideIn{
     from{
@@ -216,51 +216,35 @@ button:hover{
     top: 9px;
     left: 155px;
 } 
-/* 
+
 .location {
      display: flex;
     width: 100%;
     margin-top: 1em;
+    /* margin-left: 5%; */
     justify-content: center;
     padding: 10px;
     align-items: center;
-} */
-
-.location {
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 1em;
-    justify-content: center;
-    padding: 10px;
-    align-items: center;
-    height: 50px;
-    padding-left: 8%;
-} 
+}
 
 .location > * {
     margin: 15px;
 }
 
- /* .add-reset{
+ .add-reset{
     display: flex;
-   flex-flow: row wrap;
-   justify-content: space-around;
-    
-    margin: 1em 33% 0 5px;
-    
+    width: 25%;
+    margin-top: 1em;
+    margin-left: 5%;
+    justify-content: space-between;
     align-items: center;
-} */
-
-.add-reset{
-    width: 72%;
-    margin: 0 auto;
 }
 .location p{
     font-weight: bold;
-    margin-top: -4px;
 }
-
+.add-reset{
+    width: 90%;
+}
 #add-Row{
     width: 160px;
 }
@@ -269,20 +253,11 @@ button:hover{
     
 }
 
-#peak{
-    display: flex;
-    flex-direction: column;
-    height: 50px;
-    width: 250px;
-    align-items: start;
-    justify-content: space-between;
-}
-
-
 #guide{
-    
+    /* position: absolute;
+    left: 26%;
     font-size: 0.7em;
-   
+    font-weight: bold; */
 }
 #entries{
     margin: 0 auto;
@@ -305,11 +280,13 @@ button:hover{
 }
 
 .headings{
+    display: flex;
+    margin-left: 0;
+    width: 84%;
+    margin: 2rem auto;
+    justify-content: space-between;
     border-bottom: 2px solid red;
-    margin-bottom: 1rem;
-}
-.input-table{
-    margin-top: -7rem;
+    padding-bottom: 1rem;
 }
 .headings p{
     display: inline;
@@ -337,8 +314,8 @@ input{
     border-radius: 5px;
 }
 .muse h1{
-    margin: 2rem auto 3rem;
-    font-size: 2rem;
+    margin: 3rem auto;
+    font-size: 2.3rem;
     /* width: 50%; */
     /* border: 1px solid #777;
     border-radius: 6px; */
@@ -347,41 +324,6 @@ input{
  select{
     padding: 2em;
 } 
-th, td{
-    margin-bottom: 3rem;
-}
-
-td:nth-child(5){
-    display: none;
-}
-.qty,
-.watts,
-.hours,
-.daily {
-    width: 80px;
-    margin: 15px;
-}
-
-
-table.buttontable{
-    position: relative;
-    text-align: center;
-    width: 80%;
-    margin: 15px auto;
-    
-}
-
-table.buttontable td:nth-child(1){
-    width: 21%;
-}
-table.buttontable td:nth-child(2){
-    width: 56%;
-}
-table.buttontable td:nth-child(3){
-    width: 23%;
-    text-align: left;
-}
-
 
 .button{
     padding: 0.8em 2em;
@@ -397,13 +339,10 @@ table.buttontable td:nth-child(3){
     padding: 0.6em;
     margin-right: 10%;
     width: 100px;
-    height: 35px;
 }
 
 .remove-row{
-    /* display: inline-block; */
-    display: block;
-    margin-left: -0.3rem;
+    display: inline-block;
     border-radius: 20%;
     border: 1px solid #333;
     background: red;
@@ -413,20 +352,16 @@ table.buttontable td:nth-child(3){
 
 
 #sunhoursByState, #breakdown{
-    width: 380px;
+    width: 500px;
     height: 400px;
 } 
 
-.daily {
-    display: none;
-}
 
 
 #power-needed{
-    margin-top: 3%;
+    margin-top: 1%;
     font-weight: bold;
     font-size: 1.3em;
-    /* margin-bottom: -1rem; */
 }
 #analysis{
     width: 480px;
@@ -435,24 +370,6 @@ table.buttontable td:nth-child(3){
     border-radius: 10px;
     margin: 1% auto;
     line-height: 1.8em;
-    margin-bottom: 3rem;
-}
-
-#summary{
-    position: relative;
-}
-#charts{
-    display: flex;
-    width: 100%;
-    margin: 5px;
-    /* margin-top: 5%; */
-    /* justify-content: space-evenly; */
-    justify-content: center;
-    align-items: center;
-}
-
-.appliances {
-    width: 224px;
 }
 
 
@@ -485,10 +402,8 @@ table.buttontable td:nth-child(3){
 
 .qty,
 .watts,
-.hours,
-.daily {
+.hours {
     width: 80px;
-    margin: 7px;
 }
 .appliances {
     width: 110px;
@@ -498,31 +413,12 @@ table.buttontable td:nth-child(3){
     margin-left: 4rem;
     
 }
-
-
-#charts {
-    flex-direction: column;
+.headings p {
+    font-size: 16px !important;
 }
 
- table.buttontable td:nth-child(1){
-    width: 25%
- }
- table.buttontable td:nth-child(2){
-    width: 45%
- }
- table.buttontable td:nth-child(3){
-    width: 30%
- }
-
 }
-
-
-
 @media screen and (max-width: 760px) {
-        .headings p,
-    .reduce-text {
-        font-size: 13px !important;
-    }
     #background {
         opacity: 0.5;
     }
@@ -557,23 +453,12 @@ table.buttontable td:nth-child(3){
     font-weight: bold;
 }
 
-
 #userinfo {
     margin-left: auto;
     margin-right: auto;
 }
 .muse h1 {
-    font-size: 1.7rem;
-    margin: 1.3rem auto;
-}
-
-/* .peak-sun {
-    font-size: 14px;
-} */
-
-.location {
-    flex-direction: column;
-    padding-top: 15%;
+    font-size: 2rem;
 }
 
 .headings {
@@ -582,94 +467,26 @@ table.buttontable td:nth-child(3){
     margin-right: auto;
 }
 
- 
- table.buttontable td:nth-child(1){
-     width: 21%;
- }
- table.buttontable td:nth-child(2){
-     width: 46%;
- }
- table.buttontable td:nth-child(3){
-     width: 30%;
-     text-align: left;
- }
-
-
+#summary{
+    position: relative;
+}
+#charts{
+    display: flex;
+    width: 100%;
+    /* margin-top: 5%; */
+    /* justify-content: space-evenly; */
+    justify-content: center;
+    align-items: center;
+}
 
 }
 @media screen and (max-width: 660px) {
-    .muse h1 {
-    font-size: 1.2rem;
-}
     .nav-links{
         width: 100%;
         margin: 0 auto;
     }
-    
-    .qty,
-    .watts,
-    .hours {
-    width: 50px;
-    margin: 10px;
-    }
-.appliances {
-    width: 110px;
-
 }
-/* .buttontable{
-    width: 100%;
-    margin-bottom: 10px;
-} */
-table.buttontable{
-    position: relative;
-    text-align: center;
-    width: 100%;
-    margin: 15px auto;
-    
-}
-
-table.buttontable td{
-    width: 33.3%;
-}
-
-
-/* .buttontable td:nth-child(3){
-    text-align: center;
-    width: 15%;
-} */
-
-}
-@media screen and (max-width: 560px) { 
-    #analysis {
-        width: 350px !important;
-    }
-
-    .add-reset{
-    width: 90%;
-    margin: 0 auto;
-}
-
-    .buttontable{
-        text-align: left;
-    }
-
-    .appliance-reduce-padding {
-        padding: 0.8rem 0 !important;
-    }
-
-    .highlighted-btn {
-        padding: 0.3rem 0.9rem;
-    }
-
-    .about-header {
-        font-size: 1.7rem;
-    }
-}
-
-@media screen and (max-width: 410px) {
-    #add-Row {
-        width: 120px;
-    }
+@media screen and (max-width: 400px) {
     .nav-links{
         width: 100%;
         margin: 0 auto;
@@ -679,25 +496,4 @@ table.buttontable td{
         padding-left: 1rem;
         padding-right: 1rem;
     }
-    .qty,
-    .watts,
-    .hours {
-    width: 50px;
-    margin: 7px;
-    }
-    .about-header {
-        font-size: 1.5rem;
-    }
-    .add-reset{
-        width: 90%;
-        margin: 0 auto;
-    }
-.appliances {
-    width: 60px;
-}
-.headings  {
-    width: 120%;
-    margin-left: 4rem;
-    
-}
 }
