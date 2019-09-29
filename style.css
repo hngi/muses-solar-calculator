@@ -111,7 +111,7 @@ button:hover{
     width: 60px;
 }
 
-/* .link-border {
+.link-border {
 
        padding: 0.6em 1.3em;
        display: inline-block;
@@ -121,9 +121,9 @@ button:hover{
 .link-border:hover {
     border: 2px solid orange;
     border-radius: 2em;
-} */
+} 
 
-/* .nav-links li:nth-child(2){
+.nav-links li:nth-child(2){
     animation-delay: 0.5s;    
 }
 
@@ -164,7 +164,7 @@ button:hover{
 .nav-links a:hover::before,
 .nav-links a:hover::after{
     transform: scaleX(1)
-} */
+}
 
 @keyframes slideIn{
     from{
@@ -216,22 +216,33 @@ button:hover{
     top: 9px;
     left: 155px;
 } 
-
+/* 
 .location {
      display: flex;
     width: 100%;
     margin-top: 1em;
-    /* margin-left: 5%; */
     justify-content: center;
     padding: 10px;
     align-items: center;
-}
+} */
+
+.location {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 1em;
+    justify-content: center;
+    padding: 10px;
+    align-items: center;
+    height: 50px;
+    padding-left: 8%;
+} 
 
 .location > * {
     margin: 15px;
 }
 
- .add-reset{
+ /* .add-reset{
     display: flex;
    flex-flow: row wrap;
    justify-content: space-around;
@@ -239,13 +250,17 @@ button:hover{
     margin: 1em 33% 0 5px;
     
     align-items: center;
+} */
+
+.add-reset{
+    width: 72%;
+    margin: 0 auto;
 }
 .location p{
     font-weight: bold;
+    margin-top: -4px;
 }
-.add-reset{
-    /* width: 90%; */
-}
+
 #add-Row{
     width: 160px;
 }
@@ -254,11 +269,20 @@ button:hover{
     
 }
 
+#peak{
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    width: 250px;
+    align-items: start;
+    justify-content: space-between;
+}
+
+
 #guide{
-    /* position: absolute;
-    left: 26%;
+    
     font-size: 0.7em;
-    font-weight: bold; */
+   
 }
 #entries{
     margin: 0 auto;
@@ -313,8 +337,8 @@ input{
     border-radius: 5px;
 }
 .muse h1{
-    margin: 3rem auto;
-    font-size: 2.3rem;
+    margin: 2rem auto 3rem;
+    font-size: 2rem;
     /* width: 50%; */
     /* border: 1px solid #777;
     border-radius: 6px; */
@@ -327,6 +351,9 @@ th, td{
     margin-bottom: 3rem;
 }
 
+td:nth-child(5){
+    display: none;
+}
 .qty,
 .watts,
 .hours,
@@ -334,6 +361,27 @@ th, td{
     width: 80px;
     margin: 15px;
 }
+
+
+table.buttontable{
+    position: relative;
+    text-align: center;
+    width: 80%;
+    margin: 15px auto;
+    
+}
+
+table.buttontable td:nth-child(1){
+    width: 21%;
+}
+table.buttontable td:nth-child(2){
+    width: 56%;
+}
+table.buttontable td:nth-child(3){
+    width: 23%;
+    text-align: left;
+}
+
 
 .button{
     padding: 0.8em 2em;
@@ -349,6 +397,7 @@ th, td{
     padding: 0.6em;
     margin-right: 10%;
     width: 100px;
+    height: 35px;
 }
 
 .remove-row{
@@ -374,7 +423,7 @@ th, td{
 
 
 #power-needed{
-    margin-top: 1%;
+    margin-top: 3%;
     font-weight: bold;
     font-size: 1.3em;
     /* margin-bottom: -1rem; */
@@ -395,6 +444,7 @@ th, td{
 #charts{
     display: flex;
     width: 100%;
+    margin: 5px;
     /* margin-top: 5%; */
     /* justify-content: space-evenly; */
     justify-content: center;
@@ -454,6 +504,16 @@ th, td{
     flex-direction: column;
 }
 
+ table.buttontable td:nth-child(1){
+    width: 25%
+ }
+ table.buttontable td:nth-child(2){
+    width: 45%
+ }
+ table.buttontable td:nth-child(3){
+    width: 30%
+ }
+
 }
 
 
@@ -507,12 +567,13 @@ th, td{
     margin: 1.3rem auto;
 }
 
-.peak-sun {
+/* .peak-sun {
     font-size: 14px;
-}
+} */
 
 .location {
     flex-direction: column;
+    padding-top: 15%;
 }
 
 .headings {
@@ -520,6 +581,18 @@ th, td{
     margin-left: auto;
     margin-right: auto;
 }
+
+ 
+ table.buttontable td:nth-child(1){
+     width: 21%;
+ }
+ table.buttontable td:nth-child(2){
+     width: 46%;
+ }
+ table.buttontable td:nth-child(3){
+     width: 30%;
+     text-align: left;
+ }
 
 
 
@@ -543,10 +616,27 @@ th, td{
     width: 110px;
 
 }
-.buttontable{
+/* .buttontable{
     width: 100%;
     margin-bottom: 10px;
+} */
+table.buttontable{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin: 15px auto;
+    
 }
+
+table.buttontable td{
+    width: 33.3%;
+}
+
+
+/* .buttontable td:nth-child(3){
+    text-align: center;
+    width: 15%;
+} */
 
 }
 @media screen and (max-width: 560px) { 
@@ -558,6 +648,10 @@ th, td{
     width: 90%;
     margin: 0 auto;
 }
+
+    .buttontable{
+        text-align: left;
+    }
 
     .appliance-reduce-padding {
         padding: 0.8rem 0 !important;

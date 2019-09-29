@@ -43,7 +43,7 @@ background: linear-gradient(to bottom right, #c6f89e, #ceffa7, #e0ffc6, #d9ffba,
                 </nav>
         </header>
         <div id="box">
-        <div class="muse">
+        <!-- <div class="muse">
             <h1 >MUSE SOLAR CALCULATOR</h1>
             <div class="location" >
                 <p class="peak-sun">Let's get the Peak Sun Hours in your city:</p>
@@ -53,6 +53,19 @@ background: linear-gradient(to bottom right, #c6f89e, #ceffa7, #e0ffc6, #d9ffba,
             </div>
             
             <p style="font-weight: bold" id="guide"><span style="color:red; font-size:1.5em;">*</span>Select your state of residence</p>
+        </div> -->
+
+        <div class="muse">
+            <h1 >MUSE SOLAR CALCULATOR</h1>
+            <div class="location" >
+                <p>Let's get the Peak Sun Hours in your city:</p>
+                <div id="peak">
+                    <select id="sunhours">
+                            <option value="" selected hidden>Select State</option>
+                    </select>
+                    <p style="font-weight: bold" id="guide"><span style="color:red; font-size:1.2rem;">*</span>Select your state of residence</p>
+                </div>
+            </div>
         </div>
        
         <div id="worksheet">
@@ -103,7 +116,7 @@ background: linear-gradient(to bottom right, #c6f89e, #ceffa7, #e0ffc6, #d9ffba,
             <!-- </div> -->
           </table>
             </div>
-            <table class="buttontable" width="83%">
+            <table class="buttontable">
                 <div class="add-reset">
            <tr>
             <td><button type="button" class="button reduce-text appliance-reduce-padding" id="add-Row">+Add Appliance</button></td>
@@ -117,7 +130,7 @@ background: linear-gradient(to bottom right, #c6f89e, #ceffa7, #e0ffc6, #d9ffba,
             
             <div id="summary">
                 <p id="power-needed">TOTAL POWER NEEDED</p>
-                <div id="charts" style="display: flex; justify-content: space-around; align-items: center; margin: 3rem auto"></div>
+                <div id="charts" style="display: flex; justify-content: space-around; align-items: center;"></div>
                 <div id="analysis"></div>
             </div>
             </form>
